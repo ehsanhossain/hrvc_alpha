@@ -1,0 +1,225 @@
+.Createsmall {
+    width: 16px;
+}
+
+.adRank {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.primarysave {
+    background-color: #2580D3;
+    border-radius: 3px;
+    font-size: 12px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.trantRankColor {
+    border-radius: 6px;
+    font-size: 11px;
+    color: black;
+    background-color: #F4F6F9;
+    border-left: 6px #5CAEF9 solid;
+}
+
+
+/* .barent {
+    position: relative;
+    float: left;
+    min-width: 1%;
+    height: 100%;
+    border: 10px;
+
+    /* background: #1862e8; */
+
+
+.barent-1 {
+    position: relative;
+    float: left;
+    min-width: 1%;
+    height: 100%;
+    border: 10px;
+    background: #1862e8;
+    margin-left: 35px;
+}
+
+.barent-copy {
+    background-color: #0159A9;
+    width: 150px;
+    height: 10px;
+    border-left: 3px #42A4FF solid;
+    border-right: 3px #42A4FF solid;
+    position: relative;
+    margin-top: 7px;
+}
+
+.language-font {
+    font-size: 12px;
+    background-color: #4CA0EE;
+    color: white;
+    border-radius: 3px;
+    margin-top: -5px;
+    position: absolute;
+    margin-left: 20px;
+}
+
+.barent-2 {
+    position: relative;
+    float: left;
+    min-width: 1%;
+    height: 100%;
+    border: 10px;
+    background: #1862e8;
+    margin-left: 70px;
+}
+
+.barent-3 {
+    position: relative;
+    float: left;
+    min-width: 1%;
+    height: 100%;
+    border: 10px;
+    background: #1862e8;
+    margin-left: 100px;
+}
+
+.barent-4 {
+    position: relative;
+    float: left;
+    min-width: 1%;
+    height: 100%;
+    border: 10px;
+    background: #1862e8;
+    margin-left: 125px;
+}
+
+/* .percent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-family: tahoma, arial, helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(47, 121, 232);
+} */
+
+.DeleteRound {
+    width: 12px;
+    cursor: pointer;
+}
+
+.letter {
+    font-size: 12px;
+    text-align: center;
+}
+
+.progressRank {
+    margin-top: 5px;
+    padding: 0;
+    width: 100%;
+    height: 10px;
+    overflow: hidden;
+    background: #DCDCDC;
+    border-radius: 6px;
+}
+.Framerank {
+    font-weight: 700;
+    font-size: 18px;
+    padding-top: 3px;
+}
+
+.badge-percent {
+    background-color: #5CAEF9;
+    margin-top: 2px;
+    height: 15px !important;
+    min-width: 15px;
+    max-width: 15px;
+    border-radius: 3px !important;
+    margin-left: -22px;
+    text-shadow: black 1px 1px 3px;
+    font-size: 10px;
+cursor: pointer;
+}
+.rank-box{
+    width: 30px;
+    background-color: #1862e8;
+    margin-left: -20px;
+    height: 10px;
+    margin-top: 5px;
+}
+
+.increasement-rank {
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.wrapper {
+    background: #cccccc;
+    padding-top: 0px;
+    margin-top: 5px;
+    border-radius: 30px;
+    /* border: 1px #CCCCCC solid #CCCCCC; */
+    width: 100%;
+    height: 10px;
+    position: relative;
+}
+
+.progressrank {
+    width: 16%;
+    height: 10px;
+    border-radius: 50px 5px 5px 50px;
+    background-color: #0159A9;
+    position: relative;
+    border-right: 3px solid #42A4FF;
+}
+
+.progressrank-E {
+    width: 18%;
+    height: 10px;
+    border-radius: 0px 0px 0px 0px;
+    background-color: #0159A9;
+    position: relative;
+    border-right: 3px solid #42A4FF;
+    border-left: 3px solid #42A4FF;
+    margin-left: 60px;
+}
+
+.progressrank-D {
+    width: 18%;
+    height: 10px;
+    border-radius: 0px 0px 0px 0px;
+    background-color: #0159A9;
+    position: relative;
+    border-right: 3px solid #42A4FF;
+    border-left: 3px solid #42A4FF;
+    margin-left: 120px;
+}
+
+.progressrank-B {
+    width: 18%;
+    height: 10px;
+    border-radius: 0px 0px 0px 0px;
+    background-color: #0159A9;
+    position: relative;
+    border-right: 3px solid #42A4FF;
+    border-left: 3px solid #42A4FF;
+    margin-left: 190px;
+}
+
+.progressrank-C {
+    width: 18%;
+    height: 10px;
+    border-radius: 0px 0px 0px 0px;
+    background-color: #0159A9;
+    position: relative;
+    border-right: 3px solid #42A4FF;
+    border-left: 3px solid #42A4FF;
+    margin-left: 270px;
+}

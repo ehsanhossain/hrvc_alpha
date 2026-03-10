@@ -1,0 +1,318 @@
+.backgroundforecastaccounts {
+    margin-top: 30px;
+    background-color: #F4F6F9;
+}
+
+
+.Product-Appeal {
+    font-size: 8px;
+    letter-spacing: -0.9px;
+}
+
+.Sensitivity {
+    font-size: 8px;
+    padding-top: 10px;
+    letter-spacing: -0.9px;
+}
+
+.forecast-price {
+    font-size: 11px;
+    padding-top: 20px;
+    letter-spacing: -0.9px;
+}
+
+.Rank {
+    font-size: 10px;
+}
+
+.forecast-solid {
+    border-right: 2px lightgray solid;
+}
+
+.backgroundforecastaccountss {
+    background-color: #F0F2F4;
+}
+
+.backgroundforecastaccounts1 {
+    background-color: #F0F2F4;
+    height: 50px;
+}
+
+.frt-cur {
+    font-size: 12px;
+}
+
+.pr-forecast {
+    width: 130px;
+}
+
+.small-Annual {
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.small-Annual:hover {
+    color: rgb(40, 133, 213);
+    background-color: white;
+    border-radius: 3px;
+    border-bottom: 2px solid #4DACF0;
+}
+
+.Future-solid {
+    border-left: 2px lightgray solid;
+    padding-left: -10px;
+}
+
+.Business-color {
+    font-size: 11px;
+    letter-spacing: -0.9px;
+}
+
+.Body-Sales {
+    background-color: #FFF2DB;
+    border: none;
+    height: 100%;
+}
+
+.Sales-sp {
+    border-radius: 4px;
+    color: black;
+    font-weight: 400;
+}
+
+.Body-ExPense {
+    background-color: #F5FFFF;
+    border: none;
+}
+
+.body-purple {
+    background-color: #FAF5FF;
+    border: none;
+    height: 100%;
+}
+
+.Gross-square {
+    background-color: rgb(255, 213, 0);
+    color: black;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.square-blue {
+    background-color: rgb(68 19 188);
+    color: white;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.square-blue1 {
+    background-color: rgb(68 19 188);
+    color: white;
+    border-radius: 4px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.square-blue2 {
+    background-color: rgb(68 19 188);
+    color: white;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-left: -25px;
+}
+
+.square-red {
+    background-color: rgb(255 38 38);
+    color: white;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.square-red1 {
+    background-color: rgb(255 38 38);
+    color: white;
+    border-radius: 4px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.square-green {
+    background-color: rgb(20 141 135);
+    color: white;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.square-green1 {
+    background-color: rgb(20 141 135);
+    color: white;
+    border-radius: 4px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.square-grey {
+    background-color: rgb(164 166 166);
+    color: white;
+    border-radius: 4px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.square-grey1 {
+    background-color: rgb(164 166 166);
+    color: white;
+    border-radius: 4px;
+}
+
+.body-lightgrey {
+    background-color: #F2F2F2;
+    border: none;
+    height: 300px;
+}
+
+.Fixedother-solid {
+    border-left: 2px lightgrey solid;
+    font-size: 9px;
+    padding-left: 10px;
+}
+
+.ss-solid {
+    border-right: 1px lightgray solid;
+    font-size: 9px;
+}
+
+.Super-solid {
+    border-right: 1px lightgray solid;
+    font-size: 9px;
+    letter-spacing: -0.9px;
+}
+
+.excellent {
+    font-size: 9px;
+    letter-spacing: -0.9px;
+}
+
+#ShoewAchieved {
+    display: flex;
+}
+
+.cardexcellent:hover {
+    background-color: rgb(247, 236, 125);
+    font-weight: 500;
+    font-size: 9px;
+    cursor: default;
+}
+
+.Achieved_border {
+    border-radius: 2px;
+}
+
+.users-solid1 {
+    border-bottom: 1px rgb(184, 184, 184) solid;
+    margin-top: 10px;
+}
+
+.Body-greenborder {
+    background-color: #E5FFE5;
+    border: none;
+}
+
+.f-caret-up {
+    color: #007C00;
+    font-size: 40px;
+}
+
+.up_number {
+    margin-top: -20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.dark-green {
+    background-color: #007C00;
+    border-radius: 4px;
+}
+
+.Total-Creativity {
+    font-size: 13px;
+    text-align: center;
+}
+
+.c-blackgreen {
+    background-color: #B4FFB4;
+    margin-left: -280px;
+}
+
+.c-blacksale {
+    background-color: #FFF9DB;
+    margin-top: -200px;
+    margin-left: 50px;
+    z-index: 3;
+    width: 300px;
+}
+
+.c-ExPense {
+    background-color: #DAFFFF;
+    width: 350px;
+    margin-left: -60px;
+}
+
+.c-f {
+    background-color: #F1E1FF;
+    width: 390px;
+    z-index: 3;
+    margin-top: 120px;
+}
+
+.sh {
+    color: rgb(214, 12, 12);
+    font-weight: 500;
+}
+
+.yn {
+    background-color: rgb(255, 213, 0);
+    color: black;
+}
+
+.pv {
+    background-color: #80E1E1;
+    color: black;
+}
+
+.cf {
+    background-color: #DCB5FF;
+    color: black;
+    margin-left: -5px;
+}
+
+.imagesTeam_Human {
+    width: 15px;
+}
+
+.Text_HumanResource {
+    font-size: 11px;
+    letter-spacing: -0.9px;
+    color: black;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.left_LaborShare {
+    margin-left: 20px;
+}
+
+.images_Goods {
+    width: 15px;
+}
+
+.imagesTeam_Interest {
+    width: 12px;
+}
+
+.image_Achieved {
+    width: 15px;
+}

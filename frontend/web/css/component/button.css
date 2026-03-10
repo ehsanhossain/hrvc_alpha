@@ -1,0 +1,504 @@
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-bg-gray-xs {
+    border: #000 solid thin;
+    text-align: center;
+    color: #000;
+    font-size: 13px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 3px;
+    padding: 5px 5px 5px 5px;
+    /* padding-left: 3px;
+    padding-top: 0px;
+    padding-right: 3px; */
+    background-color: #818181;
+}
+
+.btn-bg-white-xs {
+    border: lightgray solid thin;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    color: #000;
+    font-size: 13px;
+    height: 34px;
+    width: 34px;
+    flex-shrink: 0;
+    border-radius: 3px;
+    /* padding: 5px 5px 5px 5px; */
+    /* 
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-right: 3px; */
+    background-color: white;
+}
+
+.btn-bg-red-xs {
+    border: #EC1D42 solid thin;
+    text-align: center;
+    color: #EC1D42;
+    font-size: 13px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 3px;
+    padding: 5px 5px 5px 5px;
+    /* padding-left: 3px;
+    padding-top: 0px;
+    padding-right: 3px; */
+    background-color: #ffff;
+}
+
+.pim-btn-blue {
+    display: flex;
+    height: 20px;
+    padding-left: 3.5px;
+    padding-right: 3.5px;
+    border-radius: 3px;
+    align-items: center;
+    justify-items: center;
+    font-size: 10px;
+    font-weight: 500;
+    background-color: #2580D3;
+    color: #000;
+    border: 0.5px solid #2580D3;
+    text-decoration: none;
+}
+
+.btn-bg-blue-xs {
+    border: lightgray solid thin;
+    text-align: center;
+    color: #000;
+    font-size: 13px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 3px;
+    padding: 5px 5px 5px 5px;
+    background: var(--Primary-Blue---HRVC, #2580D3);
+}
+
+.btn-bg-red-xsold {
+    border: #BB2020 solid thin;
+    text-align: center;
+    color: #BB2020;
+    font-size: 13px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 3px;
+    padding: 5px 5px 5px 5px;
+    /* padding-left: 3px;
+    padding-top: 0px;
+    padding-right: 3px; */
+    background-color: #FFE3E3;
+}
+
+.btn-bg-red-xs:hover {
+    border: #EC1D42 solid thin;
+    text-align: center;
+    color: #ffff;
+    font-size: 13px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 3px;
+    padding: 5px 5px 5px 5px;
+    /* padding-left: 3px;
+    padding-top: 0px;
+    padding-right: 3px; */
+    background-color: #EC1D42;
+}
+
+.btn-bg-white-xs:hover {
+    border: gray solid thin;
+    background-color: white;
+}
+
+.btn-bg-gray-xs:hover {
+    border: gray solid thin;
+    background-color: white;
+}
+
+.btn-bg-blue-xs:hover {
+    border: gray solid thin;
+    background: var(--Primary-Blue---HRVC, #2580D3);
+}
+
+.btn-xs {
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    /* padding: 0.5% 1% 2% 1%; */
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 1px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+.pim-btn-over {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    background-color: #E05757;
+    font-size: 11px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    height: 23px;
+    width: 62px;
+    cursor: pointer;
+}
+
+.pim-btn-inprogress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    background-color: #2F42ED;
+    font-size: 11px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    height: 23px;
+    width: 62px;
+    cursor: pointer;
+
+}
+
+.pim-btn-setup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    background-color: #2580D3;
+    font-size: 11px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    height: 23px;
+    width: 62px;
+    cursor: pointer;
+}
+
+.pim-btn-complete {
+    font-size: 11px;
+    color: white;
+    text-align: center;
+    background-color: #2D7F06;
+    padding: 2px 3px 2px 3px;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--100-white, #FFF);
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 15.479px;
+    /* 110.567% */
+    letter-spacing: -0.21px;
+    text-transform: capitalize;
+}
+
+.pim-btn-disable {
+    display: flex;
+    height: 20px;
+    padding-left: 3.5px;
+    padding-right: 3.5px;
+    border-radius: 3px;
+    align-items: center;
+    justify-items: center;
+    font-size: 10px;
+    font-weight: 500;
+    background-color: #818181;
+    color: #000;
+    border: 0.5px solid #CBD5E1;
+    text-decoration: none;
+}
+
+.pim-btn-lock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    font-size: 11px;
+    border-radius: 3px;
+    text-decoration: none;
+    height: 23px;
+    width: 62px;
+    background-color: #818181;
+    color: #000;
+    border: 0.5px solid #CBD5E1;
+}
+
+.pim-btn {
+    display: flex;
+    height: 20px;
+    padding-left: 3.5px;
+    padding-right: 3.5px;
+    border-radius: 3px;
+    align-items: center;
+    justify-items: center;
+    font-size: 10px;
+    font-weight: 500;
+    background-color: #FFFFFF;
+    color: #3C3D48;
+    border: 0.5px solid #CBD5E1;
+    text-decoration: none;
+}
+/* กำหนดค่าทับสำหรับทุกคลาสปุ่มที่คุณระบุ */
+.pim-btn-over:hover, .pim-btn-over:focus, .pim-btn-over:active,
+.pim-btn-inprogress:hover, .pim-btn-inprogress:focus, .pim-btn-inprogress:active,
+.pim-btn-setup:hover, .pim-btn-setup:focus, .pim-btn-setup:active,
+.pim-btn-complete:hover, .pim-btn-complete:focus, .pim-btn-complete:active,
+.pim-btn-disable:hover, .pim-btn-disable:focus, .pim-btn-disable:active,
+.pim-btn-lock:hover, .pim-btn-lock:focus, .pim-btn-lock:active,
+.pim-btn:hover, .pim-btn:focus, .pim-btn:active {
+    
+    /* คงสีพื้นหลังเดิมไว้ เพื่อป้องกันไม่ให้เป็นสีฟ้า */
+    /* คุณต้องกำหนด background-color เดิมของแต่ละคลาสทับลงไปในโค้ดจริงของคุณ */
+
+    /* 1. กำหนดสีข้อความเป็นสีขาวตามที่คุณต้องการ */
+    color: white; 
+    
+    /* 2. ลบเส้นขอบไฮไลท์สีฟ้า/ส้มของเบราว์เซอร์ */
+    outline: none; 
+    
+    /* 3. ตรวจสอบและยกเลิกเส้นใต้ถ้ามี (ถ้าปุ่มเป็นแท็ก <a>) */
+    text-decoration: none;
+}
+
+.pim-btn-delete {
+    display: flex;
+    height: 20px;
+    padding-left: 3.5px;
+    padding-right: 3.5px;
+    border-radius: 3px;
+    align-items: center;
+    justify-items: center;
+    font-size: 10px;
+    font-weight: 500;
+    background-color: #FFE3E3;
+    color: #3C3D48;
+    border: 0.5px solid #BB2020;
+    text-decoration: none;
+}
+
+.pim-btn-delete:hover {
+    background-color: #E05757;
+    cursor: pointer;
+}
+
+.btn-create {
+    background-color: #2580D3;
+    color: white;
+    border-radius: 3px;
+    padding: 3px 3px 3px 3px;
+    border: 0;
+
+}
+
+.btn-create-small {
+    color: var(--100-white, #FFF);
+    font-size: 11.455px;
+    font-weight: 600;
+    padding: 1px 6px;
+    height: 18px;
+    font-size: 10px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    border-radius: 3.273px;
+    background: var(--Primary-Blue---HRVC, #2580D3);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-disble-small {
+    color: var(--100-white, #000);
+    font-size: 11.455px;
+    font-weight: 600;
+    padding: 1px 6px;
+    height: 18px;
+    font-size: 10px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    border-radius: 3.273px;
+    background: var(--Overall-Blocked, #C3C3C3);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-reply {
+    background-color: #2580D3;
+    color: white;
+    border-radius: 3px;
+    display: inline-flex;
+    height: 20px;
+    align-items: center;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.btn-blue {
+    padding: 7px 20px 7px 20px;
+    background-color: #2580D3;
+    color: white;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+.btn-blue-sm {
+    padding: 5px 10px 5px 10px;
+    background-color: #2580D3;
+    color: white;
+    border-radius: 3px;
+    font-weight: 400;
+}
+
+.btn-red-sm {
+    padding: 5px 10px 5px 10px;
+    background-color: #FFE3E3;
+    border: #BB2020 solid 1px;
+    color: #BB2020;
+    border-radius: 3px;
+    font-weight: 400;
+}
+
+.approve-btn {
+    background-color: #CCE7FF;
+    color: #2580D3;
+    border: #2580D3 solid 1px;
+    border-radius: 3px;
+    padding: 3px 5px 3px 5px;
+
+}
+
+.decline-btn {
+    background-color: #FFE3E3;
+    color: #F56A6A;
+    border: #F56A6A solid 1px;
+    border-radius: 3px;
+    padding: 3px 5px 3px 5px;
+
+}
+
+.btn-previous {
+    /* display: flex; */
+    width: 80px;
+    height: 26px;
+    gap: 10px;
+    border-radius: 4.048px;
+    border: 0.5px solid var(--Stroke-Bluish-Gray, #BBCDDE);
+    background: #FBFDFF;
+    color: var(--Primary-Blue---HRVC, #2580D3);
+    text-align: justify;
+    font-feature-settings: 'salt' on;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    /* line-height: 26.986px; */
+}
+
+
+.btn-next {
+    /* display: flex; */
+    width: 80px;
+    height: 26px;
+    /* padding: 8px 10px; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 10px;
+    border-radius: 4.048px;
+    border: 0.5px solid var(--Stroke-Bluish-Gray, #BBCDDE);
+    background: #FBFDFF;
+    color: var(--Primary-Blue---HRVC, #2580D3);
+    /* text-align: justify; */
+    font-feature-settings: 'salt' on;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    /* line-height: 26.986px; */
+}
+
+.btn-previous-disable {
+    /* display: flex; */
+    width: 80px;
+    height: 26px;
+    /* padding: 8px 10px; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 10px;
+    border-radius: 4.048px;
+    border: none;
+    background: #EEE;
+    color: var(--Blocked-Text, #3C3D48);
+    /* text-align: justify; */
+    font-feature-settings: 'salt' on;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    /* line-height: 26.986px; */
+}
+
+
+.btn-next-disable {
+    /* display: flex; */
+    width: 80px;
+    height: 26px;
+    /* padding: 8px 10px; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 10px;
+    border-radius: 4.048px;
+    border: none;
+    background: #EEE;
+    color: var(--Blocked-Text, #3C3D48);
+    /* text-align: justify; */
+    font-feature-settings: 'salt' on;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    /* line-height: 26.986px; */
+    /* 224.886% */
+
+}
+
+
+.btn-delete-custom {
+    background-color: #ffffff;
+    color: #dc3545;
+    /* สีแดง */
+    border: 1px solid #dc3545;
+    transition: all 0.3s ease;
+    width: 100px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.btn-delete-custom:hover {
+    background-color: #dc3545;
+    color: #ffffff;
+}

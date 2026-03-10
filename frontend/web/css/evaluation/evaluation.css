@@ -1,0 +1,365 @@
+.environment {
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.lightCreate {
+    width: 15px;
+}
+
+.but_createeva {
+    padding-top: 1px;
+    padding-bottom: 3px;
+    margin-left: 15px;
+}
+
+.img_select24 {
+    width: 15px;
+}
+
+.example-Dha {
+    border-radius: 20px;
+    background-color: #F0F2F4;
+    font-size: 12px;
+    color: black;
+}
+
+.imagesFilterPlus {
+    width: 17px;
+    cursor: pointer;
+}
+
+.images3Dot {
+    width: 16px;
+    cursor: pointer;
+}
+
+.Moretop {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+
+.namelogoMask {
+    border-left: 1px lightgray solid;
+    padding-left: 10px;
+}
+
+.imageEvaluatorcountry1 {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.collapseTokyo {
+    font-size: 11px;
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+.collapsebackground {
+    background-color: #D1E5F9;
+}
+.number-circle2{
+    height: 20px;
+    width: 20px;
+    font-size: 12px;
+    border-radius: 100%;
+    border: 2px;
+    border-style: solid;
+    border-color: #23b3f1 !important;
+    text-align: center;
+}
+.number-circle-achived{
+    height: 21px;
+    width: 21px;
+    font-size: 12px;
+    border-radius: 100%;
+    border: 3px;
+    border-style: solid;
+    border-color: #f1c423 !important;
+    font-weight: 500;
+    text-align: center;
+}
+.term-circle-pass{
+    height: 25px;
+    width: 25px;
+    font-size: 12px;
+    border-radius: 100%;
+    border: 2px;
+    border-style: solid;
+    border-color: #23b3f1 !important;
+    background-color: #23b3f1  ;
+    color: white;
+    text-align: center;
+}
+.term-circle-running{
+    height: 25px;
+    width: 25px;
+    font-size: 12px;
+    border-radius: 100%;
+    border: 2px;
+    border-style: solid;
+    border-color: #23b3f1 !important;
+    text-align: center;
+}
+.term-circle-next{
+    height: 25px;
+    width: 25px;
+    font-size: 12px;
+    border-radius: 100%;
+    border: 2px;
+    border-style:dotted;
+    border-color: #23b3f1 !important;
+    text-align: center;
+}
+.step-line-term{
+    border-style: solid;
+    border-color: #23b3f1 !important;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    margin-top: 12px;
+}
+.step-line-term-next{
+    border-style: dotted;
+    border-color: #23b3f1 !important;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    margin-top: 12px;
+}
+.step-line{
+    border-style: solid;
+    border-color: #23b3f1 !important;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    margin-top: 8px;
+}
+
+#gradbox {
+    height: 40px;
+    border-radius: 5px;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-left: 5px;
+    background-color: rgb(235, 235, 235);
+    background: linear-gradient(to right, #D1E5F9 20%, rgba(0, 0, 0, 0) 20%);
+}
+
+.NAMETYPE {
+    border-right: 2px lightgray solid;
+}
+
+.co-lorskyblue {
+    color: #5193f5;
+    font-size: 16px;
+}
+
+.evaluationgray {
+    background-color: #d9d9d9;
+}
+
+.exclamation-circlewarning {
+    background-color: rgb(255, 230, 4);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.SetEvaluatorcircle {
+    border: 2px rgb(255, 255, 255) dashed;
+    background-color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border-left: 2px white solid;
+}
+
+.formthlarge {
+    font-size: 12px;
+    width: 5rem;
+}
+
+.thlarge {
+    color: #2376f1;
+    font-size: 13px;
+}
+
+.borderconfig {
+    border-radius: 2px;
+    font-size: 12px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.Delectconfig {
+    color: red;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.Cogconfig {
+    color: #2377C6;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.badge-gray-table {
+    background-color: #F0F2F4;
+    border-radius: 3px;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-transform: uppercase;
+}
+
+.imageFromCheckboxs {
+    width: 20px;
+    margin-left: 40px;
+    border: 2px lightgray dashed;
+    background-color: lightgray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trantRankColorred {
+    border-radius: 6px;
+    font-size: 11px;
+    color: black;
+    background-color: #F4F6F9;
+    border-left: 6px #F55431 solid;
+}
+
+.trantRankColoryellow {
+    border-radius: 6px;
+    font-size: 11px;
+    color: black;
+    background-color: #F4F6F9;
+    border-left: 6px #FFDC61 solid;
+}
+
+.iconstimesred {
+    color: rgb(255 108 108);
+    font-size: 23px;
+}
+
+
+.imagescan {
+    width: 15px;
+}
+
+.borderscan {
+    color: black;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.circle_6 {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 10px;
+    border: solid 3px lightgray;
+    margin-top: -40px;
+    margin-left: 110px;
+    position: absolute;
+}
+
+
+
+.halfleft {
+    font-weight: 600;
+    color: #2376f1;
+    font-size: 12px;
+    background-color: #BCD7FF;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.imageslogoMask1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.Toa_Registered {
+    margin-left: 82px;
+    color: #A8A6A6;
+    margin-top: -25px;
+    position: absolute;
+    font-size: 10px;
+}
+
+.iconsDarkedit-1 {
+    cursor: pointer;
+    width: 18px;
+}
+
+.number-circle {
+    border-radius: 100%;
+    border-color: slategrey;
+}
+
+.Dark-edit {
+    border-radius: 4px;
+}
+
+.Dark-delete {
+    border-radius: 4px;
+}
+
+.iconsDarkedelete-1 {
+    cursor: pointer;
+    width: 18px;
+}
+
+.text539DF3_1 {
+    color: #539DF3;
+    font-size: 10px;
+}
+
+.panel {
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, .9) !important;
+    border: solid 2px #F4F6F9;
+    border-radius: 3px;
+}
+
+.panel-heading {
+    background-color: #F4F6F9 !important;
+}
+
+#accordion_search_bar {
+    border: solid 2px #ccc;
+}
+
+.btn-default {
+    border: solid 1.5px #ccc;
+}
+
+.fa-search {
+    font-size: 1.3em;
+}
+
+.fa-paw {
+    font-size: 1.4em;
+    color: #6B7F7A;
+}
+
+.data1 {
+    font-weight: 700;
+    margin-top: 30px;
+    color: black;
+}
+
+.between1 {
+    color: black;
+    font-size: 12px;
+    padding-top: 5px;
+}

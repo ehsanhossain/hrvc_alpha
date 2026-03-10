@@ -1,0 +1,149 @@
+.alert-updated {
+    background-color: #F4F6F9;
+    color: black;
+    border-radius: 6px;
+}
+
+.ADD-register {
+    background-color: #2580D3;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.picregister-add {
+    width: 12px;
+    margin-top: -5px;
+}
+
+.updated_registersalary {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.import_updated {
+    background-color: #ffffff;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #525252;
+    cursor: pointer;
+}
+
+.pic_updateddownload1 {
+    width: 10px;
+    margin-top: -3px;
+}
+
+.slec_updated {
+    font-size: 12px;
+    border-radius: 20px;
+}
+
+.updated_evaluationQ {
+    font-size: 12px;
+    color: #18538a;
+    letter-spacing: -0.9px;
+    padding-top: 8px
+}
+
+.Dark_filterupdated {
+    width: 18px;
+}
+
+.background_updateline {
+    background-color: white;
+    margin-top: 10px;
+}
+
+.gray_update {
+    background-color: #F6F6F6;
+}
+
+.update_humanresource {
+    font-size: 13px;
+    font-weight: 500;
+    color: #606060;
+}
+
+.Assiociate_updated {
+    font-size: 10px;
+    color: gray;
+}
+
+.update1_totaltitle1 {
+    font-size: 12px;
+    color: #585858;
+    font-weight: 500;
+}
+
+.update1_totaltitle2 {
+    font-size: 12px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.Mini_updated1 {
+    font-size: 9px;
+}
+
+.badgeUp_dateborder {
+    border-color: #C9E5FF;
+    font-size: 9px;
+    border-radius: 30px;
+    text-align: center;
+}
+.salary-quartile{
+    width:20%;
+}
+
+.type_update1number {
+    border-bottom: 1px rgb(62, 61, 61) solid dashed;
+    width: 60px;
+    margin-top: 50px;
+}
+
+.Minimum_dash {
+    border-top: 1px gray dashed;
+    margin-top: -8px;
+    width: 17rem;
+    margin-left: 20px;
+    position: static;
+}
+
+.registert_1 {
+    text-transform: uppercase;
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.brd_usering {
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;/
+}
+
+.text_gray_AC {
+    color: gray;
+    font-size: 8px;
+}
+
+.logo_regis {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.Log_name {
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+}
+
+.select_ranky {
+    width: 22px;
+}

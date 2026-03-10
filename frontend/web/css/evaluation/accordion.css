@@ -1,0 +1,305 @@
+.imageslogoMaskTCF {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.accordion-content {
+    background-color: white;
+    /* border-left: 1px solid whitesmoke; */
+    /* border-right: 1px solid whitesmoke; */
+    padding: 0 20px;
+    max-height: 0;
+    font-size: 13px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+}
+
+.accordion-rank1 {
+    width: 10px;
+}
+
+.bg-sprank1 {
+    background-color: #D5E5ED;
+}
+
+.Manager {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.bg-primary-MM {
+    background-color: #308FFF;
+    font-size: 9px;
+    font-weight: 400;
+}
+
+.accordion-3Dot {
+    width: 11px;
+    margin-top: -6px;
+}
+
+.accordion-dot {
+    width: 15px;
+    text-align: right;
+}
+
+.B {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.accordion-Included {
+    font-size: 9px;
+    color: #7E7E7E;
+    margin-left: 45px;
+    padding-top: 30px;
+}
+
+.accordion-C9E5FF {
+    border-color: #C9E5FF;
+    font-size: 9px;
+    border-radius: 30px;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 50px;
+}
+
+.Minimum {
+    font-size: 8px;
+    width: 90px;
+
+}
+
+.accordionpl_minimum {
+    margin-top: 5px;
+}
+
+.accordion-minimum-solid {
+    border-bottom: 1px #000000 dashed;
+    position: absolute;
+    height: 0px;
+    width: 300px;
+    margin-top: 37px;
+}
+
+.accordion-D6FFDF {
+    background-color: #D6FFDF;
+    border-radius: 20px;
+    border-color: #32BD1B;
+    margin-top: 24px;
+    font-size: 11px;
+}
+
+.accordion-UP {
+    font-size: 14px;
+    color: #32BD1B;
+}
+
+.bg-D6FFDF {
+    margin-top: 10px;
+    background-color: #D6FFDF;
+    border-radius: 30px;
+    border: 1px #31BD1B solid;
+    color: #0E7318;
+    font-size: 10px;
+}
+
+.Unit-Increment {
+    font-size: 10px;
+    color: #363636;
+    width: 80px;
+    margin-left: -10px;
+}
+
+#salary_scrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.tablesalary1 {
+    font-size: 8px;
+    font-weight: 600;
+    color: #585858;
+}
+
+.accordion-profile {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.salaryalert {
+    background-color: white;
+    border-left: 6px #308FFF solid;
+}
+
+.namesalary {
+    font-size: 7px;
+    font-weight: 500;
+}
+
+.tableclass1 {
+    border-right: 2px lightgray solid;
+}
+
+.allclass {
+    font-size: 6px;
+}
+
+.tableA {
+    font-size: 7px;
+    font-weight: 500;
+}
+
+.scrollbar-salaryallowanec {
+    float: left;
+    height: 180px;
+    background: #F5F5F5;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+#salary_scrollbar::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+#salary_scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #B0B2BE;
+}
+
+.alert-F5F5F5 {
+    background-color: #F5F5F5;
+    border-color: #bdbdbd;
+}
+
+.classA {
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    background-color: #87CDFF;
+}
+
+.classtext {
+    font-size: 10px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.solis-bottom {
+    border-bottom: 2px light solid;
+}
+
+.accordionlink1 {
+    width: 10px;
+}
+
+.stepname {
+    font-size: 13px;
+    color: #585858;
+}
+
+.colorAllowance {
+    color: #585858;
+}
+
+input[value="clickAllowance"]:checked+label {
+    font-weight: 500;
+}
+
+input[value="Allowance2"]:checked+label {
+    font-weight: 500;
+}
+
+
+.accordionAddLayer {
+    width: 15px;
+    margin-top: -5px;
+}
+
+.addleyer {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.cursor_AddLayer {
+    cursor: pointer;
+}
+
+.alert-ffff {
+    background-color: white;
+    border-radius: 4px;
+}
+
+.Allowance2-solid {
+    border-left: 1px #B8B8B8 solid;
+    font-size: 8px;
+    padding-top: 5px;
+}
+
+.Qualification-Allowance {
+    font-size: 8px;
+}
+
+.DeleteRound1 {
+    width: 10px;
+    cursor: pointer;
+}
+
+.tb-borderless-salary {
+    font-size: 12px;
+    color: #585858;
+    font-weight: 500;
+}
+
+.accordion_user {
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+}
+
+.table-borderless-background-gray {
+    background-color: #ECECEC;
+    border-radius: 4px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background-color: #ECECEC;
+}
+
+.silly_table-gray {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 150px;
+    width: 290px;
+    padding-bottom: 20px;
+}
+
+.bg_userTable {
+    border-radius: 4px;
+    font-size: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-left: 5px #1899f4 solid;
+    margin-top: 10px;
+}
+
+.Rank-salary {
+    font-size: 12px;
+    background-color: #87CDFF;
+    color: #084876;
+    font-weight: 500;
+    text-align: center;
+}

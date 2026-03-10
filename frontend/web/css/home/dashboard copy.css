@@ -1,0 +1,885 @@
+.table-KPI {
+    font-style: normal;
+    font-size: 20px;
+    color: #4F4F4F;
+    font-weight: 500;
+    margin-top: 100px;
+}
+
+.title-Update {
+    margin-top: 25px;
+    font-size: 12px;
+}
+
+.title-Respiratory {
+    margin-top: 25px;
+    font-size: 12px;
+}
+
+.table-All {
+    font-style: normal;
+    font-size: 16px;
+}
+
+.font-title {
+    font-size: 18px;
+}
+
+
+.fa-chevron-right1 {
+    color: white;
+    font-size: 12px;
+    padding-left: 30px;
+}
+
+.branch-select-1 {
+    font-size: 14px;
+    border: none;
+
+}
+
+.select-departments-1 {
+    border: none;
+    font-size: 14px;
+}
+
+.select-team-1 {
+    font-size: 14px;
+    border: none;
+}
+
+.select-title-1 {
+    border: none;
+    font-size: 14px;
+}
+
+.select-employee-1 {
+    border: none;
+    font-size: 14px;
+}
+
+.group-date-from-1 {
+    width: 170px;
+}
+
+.group-date-to-1 {
+    width: 150px;
+}
+
+.group-text-from-1 {
+    font-size: 12px;
+}
+
+.group-text-to-1 {
+    font-size: 12px;
+}
+
+.control-day-1 {
+    font-size: 12px;
+}
+
+
+.title-calendar2 {
+    margin-top: 25px;
+
+}
+
+
+.width-Round-table {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.buttton-eye {
+    cursor: pointer;
+    font-size: 22px;
+    color: grey;
+}
+
+.button-plus {
+    cursor: pointer;
+    font-size: 22px;
+    color: grey;
+    padding-left: 10px;
+}
+
+.buton-delete {
+    color: red;
+    cursor: pointer;
+    font-size: 22px;
+    padding-left: 10px;
+}
+
+.txt-sales {
+    color: #265AA7;
+}
+
+.show-fade-one {
+    font-size: 16px;
+    margin-top: 30px;
+    font-weight: 700;
+    color: black;
+}
+
+.full-background {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.small-text {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: 5px;
+}
+
+.small-textKFI {
+    color: #2F42ED;
+    leading-trim: both;
+    text-edge: cap;
+
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.small-textKGI {
+    color: var(--HRVC---Text-Black, #30313D);
+    leading-trim: both;
+    text-edge: cap;
+
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.small-textKPI {
+    color: #FF715B;
+    leading-trim: both;
+    text-edge: cap;
+
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.bold-text {
+    font-size: 14px;
+    line-height: 1.2;
+    display: inline-block;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+/* File: web/css/dashboard.css */
+/* General */
+.dashboard-title {
+    color: var(--HRVC---Text-Black, #30313D);
+    leading-trim: both;
+    text-edge: cap;
+
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21.429px;
+    /* 89.286% */
+}
+
+.dashboard-chart {
+    background-color: #F4F6F9;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    /* margin-top: 15px; */
+}
+
+.chart-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Tabs */
+.dashboard-tabs .nav-link {
+    font-size: 1rem;
+    color: #000;
+    border-radius: 0;
+    text-align: center;
+    font-size: 14px;
+    display: inline-block;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: #F5F5F5;
+    border-bottom: 3px solid #CBD5E1;
+    cursor: pointer;
+    /* เพิ่ม cursor แบบ pointer */
+
+    /* Remove the default border */
+}
+
+.dashboard-tabs .nav-link.active {
+    background-color: #D7EBFF;
+    border-bottom: 3px solid #2580D3;
+}
+
+/* Cards */
+.dashboard-kfi-card {
+    background-color: #F0F4FF;
+    border-radius: 0 0 10px 10px;
+    /* ใช้ radius เฉพาะมุมล่าง */
+    border: 1.166px solid #748EE9;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.dashboard-kfi-top {
+    border-radius: 10px 10px 0 0;
+    /* ใช้ radius เฉพาะมุมล่าง */
+    height: 11px;
+    flex-shrink: 0;
+    background: #748EE9;
+
+}
+
+
+.dashboard-kgi-card {
+    background-color: #FFF7E0;
+    border-radius: 0 0 10px 10px;
+    /* ใช้ radius เฉพาะมุมล่าง */
+    border: 1.166px solid #FDCA40;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.dashboard-kgi-top {
+    border-radius: 10px 10px 0 0;
+    /* ใช้ radius เฉพาะมุมล่าง */
+    height: 11px;
+    flex-shrink: 0;
+    background: #FDCA40;
+
+}
+
+.key-title {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.completion-percentage {
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+    transition: transform 0.1s ease;
+    /* เพิ่มเอฟเฟกต์เมื่อเปลี่ยนค่า */
+}
+
+.total-achievement {
+    font-size: 8px;
+    color: #333;
+    display: block;
+}
+
+.total-progress {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.total-k {
+    font-size: 10px;
+}
+
+.key-title-container {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.btn-update {
+    padding: 3px 3px 3px 3px;
+    font-size: 12px;
+    border-radius: 3px;
+    border: none;
+    color: #FFF;
+    background: var(--Due-Passed-Red, #E05757);
+}
+
+.btn-Locked {
+    border-radius: 3px;
+    border: none;
+    color: #000;
+    background: var(--Due-Passed-Red, #C0C0C0);
+}
+
+.btn-KFI {
+    border-radius: 3px;
+    border: none;
+    color: #FFF;
+    background: var(--Due-Passed-Red, #2F42ED);
+}
+
+.btn-KGI {
+    border-radius: 3px;
+    border: none;
+    color: #000;
+    background: var(--Due-Passed-Red, #FDCA40);
+}
+
+.btn-KPI {
+    border-radius: 3px;
+    border: none;
+    color: #FFF;
+    background: var(--Due-Passed-Red, #FF715B);
+}
+
+.key-total {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 200px;
+    /* กำหนดความกว้าง */
+    transition: max-width 0.3s ease;
+}
+
+.toggle-text {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.key-total.expanded {
+    white-space: normal;
+    /* ทำให้ข้อความแสดงเต็ม */
+    max-width: none;
+    /* ทำให้ข้อความไม่จำกัดขนาด */
+}
+
+.show-more-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+    padding: 0px 0px 0px 0px;
+}
+
+
+
+
+
+.dashboard-kpi-card {
+    background-color: #FFE8E6;
+    border-radius: 0 0 10px 10px;
+    /* ใช้ radius เฉพาะมุมล่าง */
+    border: 1.166px solid #FF715B;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.dashboard-kpi-top {
+    border-radius: 10px 10px 0 0;
+    /* ใช้ radius เฉพาะมุมล่าง */
+    height: 11px;
+    flex-shrink: 0;
+    background: #FF715B;
+
+}
+
+.progress-dashboard {
+    border-radius: 5px;
+    height: 12px;
+    background-color: #e0e0e0;
+    /* สีพื้นหลังสำหรับแถบความคืบหน้า */
+}
+
+.progress-bar {
+    transition: width 1.5s ease-in-out;
+    /* ความยาวเวลา 1.5 วินาที */
+    border-radius: 5px;
+    height: 12px;
+}
+
+.bg-KFI {
+    background-color: #748EE9 !important;
+    /* สีสำหรับ KFI */
+}
+
+.bg-KGI {
+    background-color: #FDCA40 !important;
+    /* สีสำหรับ KGI */
+}
+
+.bg-KPI {
+    background-color: #FF715B !important;
+    /* สีสำหรับ KPI */
+}
+
+
+
+.dashboard-progress-bar {
+    height: 12px;
+    border-radius: 4px;
+}
+
+h6.dashboard-kpi-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Profile Section */
+.profile-card {
+    background-color: #F4F6F9;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    text-align: left;
+    padding: 32px 16px 32px 33px;
+    margin-bottom: 20px;
+}
+
+.profile-name {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: normal;
+
+    color: var(--HRVC---Text-Black, #30313D);
+    leading-trim: both;
+    text-edge: cap;
+    font-style: normal;
+}
+
+.profile-role {
+    color: var(--Icon-Gray, #666);
+    leading-trim: both;
+    text-edge: cap;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29.25px;
+    /* 182.813% */
+    align-self: stretch;
+}
+
+.profile-rolesub {
+    color: var(--Icon-Gray, #666);
+    leading-trim: both;
+    text-edge: cap;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29.25px;
+    /* 208.929% */
+    /* 182.813% */
+    align-self: stretch;
+}
+
+.profile-details {
+    color: var(--HRVC---Text-Black, #30313D);
+    leading-trim: both;
+    text-edge: cap;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29.25px;
+    /* 182.813% */
+}
+
+/* Tabs for Schedule Section */
+.schedule-tabs .nav-link {
+    color: #000;
+    text-align: center;
+    /* ให้ขนาดของปุ่มแท็บเท่ากัน */
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 3px;
+    /* font-size: 12px; */
+
+}
+
+.schedule-tabs .nav-link.active {
+    background-color: #F4F6F9;
+    color: #000;
+    font-size: 12px;
+}
+
+.rounded-top-left .nav-link {
+    border-top-left-radius: 3px;
+    /* Ensure corners are applied */
+}
+
+.rounded-top-right .nav-link {
+    border-top-right-radius: 3px;
+    /* Ensure corners are applied */
+}
+
+.view-all-link {
+    color: #2580D3;
+    text-align: center;
+    font-feature-settings: 'salt' on, 'liga' off;
+
+    font-size: 14.627px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20.896px;
+}
+
+/* Tab Content */
+.tab-content {
+    background-color: #fff;
+    border-radius: 8px;
+    margin-top: 30px;
+    flex-direction: column;
+    gap: 15px;
+    /* เพิ่มระยะห่างระหว่างแต่ละ tab */
+}
+
+.schedule-item {
+    padding: 10.448px 16.717px;
+    gap: 30.3px;
+    border-radius: 6.269px;
+    border: 0.522px solid #E0E0E0;
+    background: var(--Background-Color, #FAFAFA);
+}
+
+.schedule-card {
+    border-radius: 10.448px 10.448px 0px 0px;
+    border: 1.045px solid #F1F1F1;
+    background: var(--Just-White, #FFF);
+    padding: 16px;
+    margin-bottom: 0;
+    /* ลบช่องว่างด้านล่าง */
+    flex-direction: column;
+    /* ทำให้เป็นแนวตั้ง */
+
+}
+
+.schedule-item strong {
+    font-weight: 600;
+}
+
+.schedule-item .text-muted {
+    font-size: 0.85rem;
+}
+
+/* Center Align for "View All" Link */
+.schedule-item .text-center {
+    margin-top: 10px;
+}
+
+#upcoming-schedule,
+#pending-approvals {
+    max-height: 250px;
+    /* กำหนดความสูงสูงสุด */
+    overflow-y: auto;
+    /* เมื่อมีเนื้อหามากกว่าความสูงที่กำหนด ให้สามารถเลื่อนได้ */
+}
+
+.schedule-item {
+    margin-top: 15px;
+    /* ปรับระยะห่างระหว่างรายการ */
+}
+
+
+.condition-name {
+    display: flex;
+    height: 26.352px;
+    padding: 7px 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.text-ViewAllbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10.448px;
+    border-radius: 0px 0px 10.448px 10.448px;
+    border: 1.045px solid #E0E0E0;
+    background: var(--100-white, #FFF);
+    margin-top: 0;
+    /* ให้ช่องว่างด้านบนเป็น 0 */
+    padding: 10.448px;
+    flex-shrink: 0;
+    /* ทำให้ไม่ยุบตัว */
+}
+
+.text-ViewAllbutton a {
+    text-decoration: none;
+    /* ทำให้ลิงค์ไม่เป็นขีดเส้นใต้ */
+    /* color: #007bff; */
+    /* สีของลิงค์ */
+    font-weight: bold;
+}
+
+.custom-hr {
+    border-top: 2px solid #C3BDBD;
+    border-style: dotted;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* width: 350.5px; */
+    height: 0px;
+    stroke-width: 1px;
+}
+
+
+.tab-Navigation .nav {
+    display: flex;
+    padding: 7px 19px;
+    border-radius: 5px;
+    background: var(--100-white, #FFF);
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.10);
+}
+
+.tab-Navigation .nav-item {
+    list-style: none;
+}
+
+.tab-Navigation .nav-link {
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    font-size: 12px;
+
+}
+
+
+
+/* chart */
+
+.legend-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+.legend-item span {
+    margin-left: 5px;
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+/* Navigation Buttons */
+.chart-nav-button {
+    position: absolute;
+    top: 6.5%;
+    z-index: 5;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+#prevButton {
+    left: 10px;
+}
+
+#nextButton {
+    left: 40px;
+}
+
+.chart-nav-button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Graph Area */
+.chart-graph {
+    width: 100%;
+    height: 400px;
+}
+
+/* Company Info */
+.chart-company-info {
+    position: absolute;
+    left: 220px;
+    top: 10%;
+    left: 30%;
+    transform: translateY(-50%);
+    z-index: 5;
+    display: flex;
+    width: 114px;
+    height: 25px;
+    padding: 6px 7px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 41px;
+    background: #D7EBFF;
+    border: none;
+}
+
+.chart-company-info img {
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+
+.chart-company-info span {
+    font-size: 12px;
+    color: #333333;
+}
+
+/* Key Buttons Group */
+.chart-button-group {
+    position: absolute;
+    top: 8%;
+    left: 65%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.chart-button-wrapper {
+    position: relative;
+}
+
+.chart-key-button {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    margin-right: 10px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.kfi {
+    background: #748EE9;
+}
+
+.kgi {
+    background: #FDCA40;
+}
+
+.kpi {
+    background: #FF715B;
+}
+
+.chart-button-wrapper span {
+    position: absolute;
+    top: 40%;
+    left: 80%;
+    transform: translateY(-50%);
+    margin-left: 2px;
+    font-size: 12px;
+    color: #333333;
+}
+
+/* Animation สำหรับข้อความเลื่อนออกไปทางซ้าย */
+@keyframes slide-out-left {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-30%);
+        opacity: 0;
+    }
+}
+
+/* Animation สำหรับข้อความเลื่อนเข้าจากขวา */
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(30%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation สำหรับข้อความเลื่อนออกไปทางขวา */
+@keyframes slide-out-right {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(30%);
+        opacity: 0;
+    }
+}
+
+/* Animation สำหรับข้อความเลื่อนเข้าจากซ้าย */
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(-30%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* คลาสสำหรับเลื่อนออกไปทางซ้าย */
+.slide-out-animation-left {
+    animation: slide-out-left 0.3s forwards;
+}
+
+/* คลาสสำหรับเลื่อนเข้าจากขวา */
+.slide-in-animation-left {
+    animation: slide-in-left 0.3s forwards;
+}
+
+/* คลาสสำหรับเลื่อนออกไปทางขวา */
+.slide-out-animation-right {
+    animation: slide-out-right 0.3s forwards;
+}
+
+/* คลาสสำหรับเลื่อนเข้าจากซ้าย */
+.slide-in-animation-right {
+    animation: slide-in-right 0.3s forwards;
+}
+
+/* เพิ่ม animation สำหรับการขยับข้อความ */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* เพิ่ม class สำหรับการขยับข้อความ */
+.bounce-animation {
+    animation: bounce 0.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .show-fade-one {
+        font-size: 15px;
+    }
+
+    .title-Respiratory {
+        margin-top: 25px;
+    }
+}

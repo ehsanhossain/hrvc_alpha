@@ -1,0 +1,17 @@
+.image-Flagcontry {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.company-kgi {
+    font-size: 12px;
+}
+
+.Resolve-kgi {
+    width: 30px;
+    height: 30px;
+    border-style: dashed;
+    border-radius: 50%;
+    color: #757575;
+}

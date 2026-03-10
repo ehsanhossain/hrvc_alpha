@@ -1,0 +1,262 @@
+.alert-white-5 {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+}
+
+.secondary-setting {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.setting-fontsize {
+    font-size: 11px;
+}
+
+.Image-Description {
+    background-color: #FFFFFF;
+    height: 20px;
+    border-radius: 50%;
+    width: 20px;
+}
+
+.number-rounded {
+    border: 1px solid rgb(58, 158, 230);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.bg-setting {
+    background-color: rgb(222 227 229);
+}
+
+.company-setting {
+    border-style: dashed;
+    color: gray;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    position: relative;
+}
+
+
+.plus-circle-logo {
+    margin-top: 20px;
+    color: gray;
+}
+
+.building1 {
+    margin-left: 5px;
+    font-size: 10px;
+}
+
+.building2 {
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.setting-upload {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-style: dashed;
+    color: #757575;
+    border-radius: 50%;
+    margin-top: 2px;
+}
+
+.setting-upload2 {
+    width: 30px;
+    height: 30px;
+    border-style: dashed;
+    color: #757575;
+    border-radius: 50%;
+    margin-left: -70px;
+}
+
+
+
+.dashedshare {
+    border-style: dashed;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    color: #757575;
+    cursor: pointer;
+}
+
+.dashedshare2 {
+    border-style: dashed;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: #757575;
+}
+
+.share-alt-setting {
+   
+    position: absolute;
+    font-size: 10px;
+    margin-left: -4px;
+    margin-top: 5px;
+   
+}
+
+.share-alt-setting2 {
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.dasheduser {
+    border-style: dashed;
+    color: #757575;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+}
+
+.company-image2 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgb(51, 123, 175);
+}
+
+.image-izmir {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+.user0m {
+    padding-left: 4px;
+    font-size: 10px;
+}
+
+.dasheduser-upload {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-style: dashed;
+    color: #757575;
+    border-radius: 50%;
+    margin-top: 2px;
+}
+
+
+.circle5 {
+    margin-top: -3px;
+    margin-left:10px;
+    position:absolute;
+    background-color:aliceblue;
+    /* margin-top: -1px;
+    margin-left: -20px;
+    position: absolute;
+    cursor: pointer;
+    color: #575454; */
+}
+
+
+.dialog-allshow {
+    margin-top: 430px;
+    margin-left: 500px;
+}
+
+.dialog-allshow1 {
+    margin-top: 210px;
+    margin-left: 500px;
+}
+
+.dialog-allshow2 {
+    margin-top: 210px;
+    margin-left: 500px;
+}
+
+.Resolve {
+    color: hsl(203, 81%, 61%);
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+.header-company {
+    background-color: #eeeeee;
+}
+
+.Resolve-c {
+    width: 30px;
+    height: 30px;
+    border-style: dashed;
+    border-radius: 100%;
+    color: #757575;
+}
+
+.card-company {
+    margin-top: -5px;
+}
+
+.company-c {
+    font-size: 12px;
+}
+
+.company-image3 {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid rgb(54 160 236);
+
+}
+
+.submit-search {
+   margin-left: 15px;
+   position:absolute;
+   margin-top: 5px;
+}
+
+.Employees-0 {
+    font-weight: 700;
+}
+
+.bg-settingkfi {
+    background-color: rgb(77, 199, 247);
+    font-size: 10px;
+}
+
+.kfi-assignpage {
+    background-color: #EAEFF4;
+    color: #82A9ED;
+    font-size: 19px;
+    border-radius: 3px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    margin-right: 10px;
+}
+.search-employee-box{
+    height: 450px;
+    position:absolute;
+    background-color:white;
+    z-index:2;
+    width:600px;
+    overflow-y: auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    display: none;
+}
+.number-circle{
+    border: red solid thin;
+    border-radius: 100%;
+    width: 27px;
+    height: 27px;
+    text-align: center;
+    font-size: 12px;
+    background-color: white;
+}
+.choose-branch{
+    line-height: 50px;
+    font-weight:600;
+    cursor: pointer;
+}.choose-branch:hover{
+background-color: #f7f7f7;
+}

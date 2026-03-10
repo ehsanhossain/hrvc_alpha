@@ -1,0 +1,231 @@
+<?php
+
+use common\models\ModelMaster;
+use frontend\models\hrvc\Branch;
+use frontend\models\hrvc\Company;
+?>
+<div class="pim-search-box d-flex align-items-center">
+    <img src="<?= Yii::$app->homeUrl ?>images/icons/Dark/48px/search.svg" class="pim-search-input-icon">
+    <input type="text" class="form-control pim-search-input" id="pim-search" placeholder="<?= Yii::t('app', 'Search...') ?>" autocomplete="off" onkeyup="pimSearchFilter(this.value)">
+</div>
+<button type="button" class="pim-filter-trigger" onclick="pimOpenFilter()">
+    <img src="<?= Yii::$app->homeUrl ?>images/icons/Dark/48px/FilterWhite.svg">
+    <?= Yii::t('app', 'Filter') ?>
+</button>
+<div class="btn-group <?= (Yii::$app->controller->action->id == 'draft' || Yii::$app->controller->action->id == 'draft-result') ? 'd-none' : '' ?>" role="group">
+    <?php
+    if ($page == 'grid') { ?>
+        <a href="#" class="btn btn-primary font-size-12 pim-change-modes">
+            <img src="<?= Yii::$app->homeUrl ?>images/icons/Dark/48px/gridwhite.svg" style="cursor: pointer; margin-top:2px;">
+        </a>
+        <a href="<?= Yii::$app->homeUrl . 'kfi/management/index' ?>"
+            class="btn btn-outline-primary font-size-12 pim-change-modes" style="border-color: #CBD5E1 !important;">
+            <img src="<?= Yii::$app->homeUrl ?>images/icons/Dark/48px/listblack.svg" style="cursor: pointer; margin-top:2px;">
+        </a>
+    <?php
+    } else { ?>
+        <a href="<?= Yii::$app->homeUrl . 'kfi/management/grid' ?>"
+            class="btn btn-outline-primary font-size-12 pim-change-modes" style="border-color: #CBD5E1 !important;">
+            <img src="<?= Yii::$app->homeUrl ?>images/icons/Dark/48px/gridblack.svg" style="cursor: pointer; margin-top:2px;">
+        </a>
+        <a href="#" class="btn btn-primary font-size-12 pim-change-modes">
+            <img src="<?= Yii::$app->homeUrl ?>images/icons/Dark/48px/listwhite.svg" style="cursor: pointer; margin-top:2px;">
+        </a>
+    <?php
+    }
+    ?>
+</div>
+
+<!-- Filter Drawer -->
+<div class="pim-filter-overlay" id="pim-filter-overlay" onclick="pimCloseFilter()"></div>
+<div class="pim-filter-drawer" id="pim-filter-drawer">
+    <div class="pim-filter-drawer-header">
+        <h3>
+            <img src="<?= Yii::$app->homeUrl ?>images/icons/Dark/48px/FilterWhite.svg" style="width:18px;height:18px;filter:brightness(0.3);">
+            <?= Yii::t('app', 'Filter Options') ?>
+        </h3>
+        <button class="pim-filter-drawer-close" onclick="pimCloseFilter()">&times;</button>
+    </div>
+    <div class="pim-filter-drawer-body">
+        <div>
+            <label><?= Yii::t('app', 'Company') ?></label>
+            <select id="company-filter" onchange="applySelectStyle(this)">
+                <?php
+                if (isset($companyId) && $companyId != "") { ?>
+                    <option value="<?= $companyId ?>"><?= Company::companyName($companyId) ?></option>
+                <?php
+                }
+                if ($role > 4) {
+                ?>
+                    <option value=""><?= Yii::t('app', 'All Companies') ?></option>
+                    <?php
+                    if (isset($companies) && count($companies) > 0) {
+                        foreach ($companies as $company) :
+                    ?>
+                            <option value="<?= $company['companyId'] ?>"><?= $company['companyName'] ?></option>
+                    <?php
+                        endforeach;
+                    }
+                }
+                ?>
+            </select>
+        </div>
+        <div>
+            <label><?= Yii::t('app', 'Branch') ?></label>
+            <select id="branch-filter" <?= $companyId == "" ? 'disabled' : '' ?> onchange="applySelectStyle(this)">
+                <?php
+                if (isset($branchId) && $branchId != "") { ?>
+                    <option value="<?= $branchId ?>"><?= Branch::branchName($branchId) ?></option>
+                <?php
+                }
+                ?>
+                <option value=""><?= Yii::t('app', 'All Branches') ?></option>
+                <?php
+                if (isset($branches) && count($branches) > 0) {
+                    foreach ($branches as $branch) : ?>
+                        <option value="<?= $branch['branchId'] ?>"><?= $branch['branchName'] ?></option>
+                <?php
+                    endforeach;
+                }
+                ?>
+            </select>
+        </div>
+        <div>
+            <label><?= Yii::t('app', 'Month') ?></label>
+            <select id="month-filter" onchange="applySelectStyle(this)">
+                <?php
+                if (isset($month) && $month != "") { ?>
+                    <option value="<?= $month ?>"><?= Yii::t('app', ModelMaster::monthFull()[$month]) ?></option>
+                <?php
+                }
+                ?>
+                <option value=""><?= Yii::t('app', 'All Months') ?></option>
+                <?php
+                if (isset($months) && count($months) > 0) {
+                    foreach ($months as $value => $month) : ?>
+                        <option value="<?= $value ?>"><?= $month ?></option>
+                <?php
+                    endforeach;
+                }
+                ?>
+            </select>
+        </div>
+        <div>
+            <label><?= Yii::t('app', 'Year') ?></label>
+            <select id="year-filter" onchange="applySelectStyle(this)">
+                <?php
+                if (isset($yearSelected) && $yearSelected != "") { ?>
+                    <option value="<?= $yearSelected ?>"><?= $yearSelected ?></option>
+                <?php
+                }
+                ?>
+                <option value=""><?= Yii::t('app', 'All Years') ?></option>
+                <?php
+                $year = 2022;
+                $i = 1;
+                while ($i < 20) {
+                    if ($year != $yearSelected) {
+                ?>
+                        <option value="<?= $year ?>"><?= $year ?></option>
+                <?php
+                    }
+                    $year += 1;
+                    $i++;
+                }
+                ?>
+            </select>
+        </div>
+        <div>
+            <label><?= Yii::t('app', 'Status') ?></label>
+            <select id="status-filter" onchange="applySelectStyle(this)">
+                <?php
+                if (isset($status) && $status != "") {
+                    if ($status == 1) { $text = 'In Progress'; }
+                    if ($status == 2) { $text = 'Completed'; }
+                    if ($status == 3) { $text = 'Due Passed'; }
+                    if ($status == 4) { $text = 'Not Set'; }
+                ?>
+                    <option value="<?= $status ?>"><?= $text ?></option>
+                <?php
+                }
+                ?>
+                <option value=""><?= Yii::t('app', 'All Statuses') ?></option>
+                <option value="1"><?= Yii::t('app', 'In Progress') ?></option>
+                <option value="3"><?= Yii::t('app', 'Due Passed') ?></option>
+                <option value="4"><?= Yii::t('app', 'Not Set') ?></option>
+                <option value="2"><?= Yii::t('app', 'Completed') ?></option>
+            </select>
+        </div>
+    </div>
+    <div class="pim-filter-drawer-footer">
+        <button class="pim-filter-apply-btn" onclick="kfiFilter(); pimCloseFilter();">
+            <img src="<?= Yii::$app->homeUrl ?>images/icons/Dark/48px/FilterWhite.svg" style="width:14px;height:14px;filter:brightness(10);">
+            <?= Yii::t('app', 'Apply Filter') ?>
+        </button>
+        <button class="pim-filter-reset-btn" onclick="pimResetFilters()" title="<?= Yii::t('app', 'Reset') ?>">&#8634;</button>
+    </div>
+</div>
+
+<script>
+    function applySelectStyle(selectElement) {
+        if (selectElement.value) {
+            selectElement.classList.remove('select-pim');
+            selectElement.classList.add('select-pimselect');
+        } else {
+            selectElement.classList.remove('select-pimselect');
+            selectElement.classList.add('select-pim');
+        }
+    }
+
+    function pimOpenFilter() {
+        document.getElementById('pim-filter-overlay').classList.add('active');
+        document.getElementById('pim-filter-drawer').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function pimCloseFilter() {
+        document.getElementById('pim-filter-overlay').classList.remove('active');
+        document.getElementById('pim-filter-drawer').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function pimResetFilters() {
+        var selects = document.querySelectorAll('#pim-filter-drawer select');
+        selects.forEach(function(s) {
+            s.selectedIndex = 0;
+            s.value = '';
+            applySelectStyle(s);
+        });
+    }
+
+    function pimSearchFilter(query) {
+        var type = document.getElementById('type') ? document.getElementById('type').value : 'grid';
+        query = query.toLowerCase().trim();
+        if (type === 'grid') {
+            var items = document.querySelectorAll('.pim-big-box');
+            items.forEach(function(item) {
+                var nameEl = item.querySelector('.pim-name');
+                var name = nameEl ? nameEl.textContent.toLowerCase() : '';
+                item.style.display = name.includes(query) ? '' : 'none';
+            });
+        } else {
+            var rows = document.querySelectorAll('#main-body tbody tr');
+            var prevSpacerHidden = false;
+            rows.forEach(function(row) {
+                if (row.querySelector('.pim-div-border')) {
+                    var name = row.textContent.toLowerCase();
+                    var show = name.includes(query);
+                    row.style.display = show ? '' : 'none';
+                    prevSpacerHidden = !show;
+                } else if (row.getAttribute('height') === '10') {
+                    row.style.display = prevSpacerHidden ? 'none' : '';
+                }
+            });
+        }
+    }
+
+    // Close drawer on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') pimCloseFilter();
+    });
+</script>

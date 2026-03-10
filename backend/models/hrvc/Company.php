@@ -1,0 +1,122 @@
+<?php
+
+namespace backend\models\hrvc;
+
+use Yii;
+use \backend\models\hrvc\master\CompanyMaster;
+use common\helpers\Path;
+
+/**
+ * This is the model class for table "company".
+ *
+ * @property integer $companyId
+ * @property string $companyName
+ * @property integer $groupId
+ * @property integer $countryId
+ * @property string $website
+ * @property string $location
+ * @property string $industries
+ * @property string $founded
+ * @property string $director
+ * @property string $email
+ * @property string $contact
+ * @property string $specialties
+ * @property string $tag
+ * @property string $about
+ * @property integer $status
+ * @property string $createDateTime
+ * @property string $updateDateTime
+ */
+
+class Company extends \backend\models\hrvc\master\CompanyMaster
+{
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return array_merge(parent::rules(), []);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return array_merge(parent::attributeLabels(), []);
+    }
+    public static function companyName($companyId)
+    {
+        $company = Company::find()->select('companyName')->where(["companyId" => $companyId])->asArray()->one();
+        if (isset($company) && !empty($company)) {
+            return $company["companyName"];
+        } else {
+            return null;
+        }
+    }
+    public static function totalEmployeeCompany($companyId)
+    {
+        $employees = Employee::find()->select('employeeId')->where(["companyId" => $companyId])->asArray()->all();
+        return count($employees);
+    }
+    public static function companyImage($id)
+    {
+        $company = Company::find()->where(["companyId" => $id])->asArray()->one();
+        $filePath = Yii::getAlias('@webroot') . '/' . $company['picture'];
+
+        if (isset($company) && !empty($company)) {
+            if (file_exists($filePath)) {
+                return $company['picture'];
+            }else{
+                return 'image/no-company.svg';
+            }
+        } else {
+            return 'images/company/profile/company.svg';
+        }
+        if (!empty($company['picture'])) {
+
+
+        
+    }
+    }
+    public static function userCompany($userId)
+    {
+        $user = User::find()
+            ->select('employeeId')
+            ->where(["userId" => $userId])
+            ->asArray()
+            ->one();
+        $employee = Employee::find()
+            ->where(["employeeId" => $user["employeeId"]])
+            ->asArray()
+            ->one();
+        return $employee["companyId"];
+    }
+    public  static function companyPicture($picture)
+    {
+        if (!empty($picture)) {
+            if (Path::isLocal()) {
+                $filePath = Yii::getAlias('@frontend') . '/web/' . $picture;
+                if (file_exists($filePath)) {
+                    return $picture;
+                }
+            } else {
+                $url = Path::frontendUrl() . $picture;
+                $headers = @get_headers($url);
+                if ($headers && strpos($headers[0], '200') !== false) {
+                    return $picture;
+                }
+            }
+        }
+        return 'image/userProfile.png';
+    }
+    public  static function enable($companyId)
+    {
+        $company = Company::find()->where(["companyId" => $companyId, "status" => [1, 2, 4]])->one();
+        if (!isset($company) || empty($company)) {
+            return 0;
+        }
+
+        return 1;
+    }
+}

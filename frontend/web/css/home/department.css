@@ -1,0 +1,82 @@
+.department-tokyo {
+    font-size: 12px;
+    padding-top: 5px;
+    height: 50px;
+}
+
+.bangladresh-hrvc1 {
+    width: 11px;
+}
+
+.bangladresh-hrvc2 {
+    font-size: 12px;
+    height: 45px;
+}
+
+.share-big {
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.show-height {
+    border-right: lightgray solid thin;
+}
+
+.department-sizesmall {
+    font-size: 12px;
+}
+
+.title-margin {
+    font-size: 12px;
+    padding-top: 50px;
+}
+
+.image-vector {
+    width: 100%;
+}
+
+.txt-bold {
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.input-group {
+    z-index: 0;
+}
+
+.department-title-box {
+    height: 160px;
+}
+
+.all-title-box {
+    width: 200px;
+    min-height: 210px;
+    background-color: white;
+    position: absolute;
+    margin-top: -200px;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-right: 5px;
+    /* padding-top: 5px; */
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 2;
+    display: none;
+
+}
+
+@media(max-width: 922px) {
+    .department-one {
+        padding-left: 20px;
+    }
+}
+
+@media(max-width: 768px) {
+    .department-one {
+        padding-left: 20px;
+    }
+
+    .image-vector {
+        width: 60px;
+    }
+}

@@ -1,0 +1,79 @@
+.checkbox-sm {
+    width: 10px;
+    height: 10px;
+}
+
+.checkbox-md {
+    width: 15px;
+    height: 15px;
+}
+
+.checkbox-lg {
+    width: 20px;
+    height: 20px;
+}
+
+.multi-select {
+    font-size: 14px;
+    border-bottom: lightgray solid thin;
+    background-color: aliceblue;
+}
+
+.multi-select-head {
+    font-size: 13px;
+    font-weight: 500;
+    background-color: aliceblue;
+}
+
+.multi-box {
+    height: 35px;
+
+}
+
+
+.custom-checkbox {
+    /* display: none; */
+    visibility: hidden;
+    /* ซ่อน checkbox */
+}
+
+.custom-checkbox-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 14px;
+    width: 14px;
+    height: 14px;
+    border: 0.5px solid #2580D3;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+    margin-left: 10px;
+}
+
+.custom-checkbox-label::before {
+    font-weight: bold;
+    color: #2580D3;
+}
+
+.custom-checkbox:checked+.custom-checkbox-label {
+    background-color: #2580D3;
+}
+
+.custom-checkbox:checked+.custom-checkbox-label::before {
+    content: "✔";
+    color: white;
+    font-size: 12px;
+}
+
+/* เมื่อสถานะเป็นลบ (บางรายการไม่ได้เลือก) */
+.custom-checkbox-label.minus::before {
+    content: "━";
+    font-size: 6px;
+    display: flex;
+    align-items: center;
+    line-height: 14px;
+    font-weight: bold;
+    /* padding-top: 4px; */
+    color: #2580D3;
+}

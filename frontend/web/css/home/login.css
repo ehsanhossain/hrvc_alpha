@@ -1,0 +1,154 @@
+.width-HRVC {
+    width: 30%;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.all-cc {
+    margin-left: 30px;
+    padding-top: 130px;
+}
+
+.c1 {
+    color: #808080;
+}
+
+.z-HRVC {
+    font-size: 32px;
+    margin-top: 40px;
+    color: #4A4543;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+.em-login {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.enter {
+    color: #808080;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+.fm-log-mail {
+    margin-left: 250px;
+    margin-top: 30px;
+}
+
+.fm-log-password {
+    margin-left: 250px;
+    margin-top: 30px;
+}
+
+.fm-signin {
+
+    margin-top: 30px;
+    text-align: center;
+}
+
+.checkbox-remember {
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+.fm-box-sig {
+    margin-top: 30px;
+    font-size: 12px;
+    text-align: end;
+}
+
+.password-eye {
+    cursor: pointer;
+}
+
+.link-privacy {
+    margin-top: 30px;
+    font-size: 10px;
+    padding-left: 280px;
+    font-weight: 700;
+}
+
+.width-rof {
+    width: 70%;
+    padding-top: 70%;
+    margin-left: 50px;
+}
+
+.backgroundbule {
+    height: 775px;
+    background-color: #DDF3FF;
+}
+
+.problem {
+    color: #9c9a9a;
+}
+
+.TCG-Logo1 {
+    width: 40px;
+    margin-top: -17px;
+}
+
+.rows-remember {
+    margin-top: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+@media (max-width: 992px) {
+    .fm-log-mail {
+        margin-left: 20px;
+        padding-right: 70px;
+    }
+
+    .fm-log-password {
+        margin-left: 20px;
+        padding-right: 70px;
+    }
+
+    .checkbox-remember {
+        margin-left: 20px;
+        font-size: 12px;
+    }
+
+    .problem {
+        padding-left: 10px;
+
+    }
+
+    .width-HRVC {
+        width: 70%;
+    }
+
+    .z-HRVC {
+        font-size: 28px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .problem {
+        font-size: 12px;
+
+    }
+
+    .fm-log-mail {
+        margin-left: 30px;
+        padding-right: 70px;
+    }
+
+    .fm-log-password {
+        margin-left: 30px;
+        padding-right: 70px;
+    }
+
+    .checkbox-remember {
+        margin-left: 30px;
+        font-size: 12px;
+    }
+
+}

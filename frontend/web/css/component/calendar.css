@@ -1,0 +1,18 @@
+.title-day {
+	width: 14.28%;
+   }
+   .day-box {
+	width: 14.28%;
+	color: gray;
+	font-size: 12px;
+   }
+   .mouse-day{
+	cursor: pointer;
+	border-radius: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+   }
+   .mouse-day:hover{
+	background-color: #BCD7FF;
+	color: black;
+   }

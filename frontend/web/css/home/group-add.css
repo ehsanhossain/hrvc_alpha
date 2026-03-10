@@ -1,0 +1,40 @@
+.profile-moon {
+    color: red;
+    font-weight: 300;
+}
+
+.form-companyname {
+    padding-top: 60px;
+}
+
+.Groupname1 {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.Groupname2 {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.plus-click {
+    cursor: pointer;
+}
+
+
+@media(max-width: 992px) {
+    .form-companyname {
+        margin-left: 20px;
+    }
+}
+
+@media(max-width: 768px) {
+    .form-companyname {
+        margin-top: -60px;
+        margin-left: 20px;
+    }
+
+    .Groupname2 {
+        font-size: 17px;
+    }
+}

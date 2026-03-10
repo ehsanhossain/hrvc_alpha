@@ -1,0 +1,497 @@
+.images-bonuesave {
+    width: 14px;
+    margin-top: -4px;
+}
+
+.picturebonus {
+    color: #F6C516;
+}
+.finalAdjust-input{
+    border-radius: 3px;
+    height: 15px;
+    width:50px;
+    border: lightgray solid thin;
+    text-align: right;
+padding-right: 5px;
+}
+
+.finalAdjust-input:focus{
+    border: gray solid thin !important;
+}
+.b2solid {
+    border-right: 1px lightgray solid;
+}
+
+.bonus-select {
+    font-size: 10px;
+    border-radius: 15px;
+    background-color: #F0F2F4;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.BG-bonusgray {
+    background-color: #efefef;
+    border-radius: 5px;
+}
+
+.BB-E3 {
+    background-color: #F9FBFF;
+    border-radius: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.number-x {
+    font-size: 8px;
+    padding-top: 5px;
+    font-weight: 700;
+}
+
+.picture-FilterPlus-bonus {
+    width: 17px;
+}
+
+.bonus-point {
+    width: 15px;
+    cursor: pointer;
+}
+
+.bg-headerbonus {
+    background-color: #87CDFF;
+    font-size: 10px;
+    color: white;
+    text-align: center;
+}
+
+.images-solidbonus1 {
+    width: 100%;
+}
+
+.bonus-sm1 {
+    color: gray;
+    font-size: 8px;
+    margin-top: -5px;
+}
+
+.bonussubmit {
+    background-color: #308FFF;
+    color: white;
+    font-size: 12px;
+    border: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 4px;
+}
+
+.bonus-head{
+    font-size: 9px;
+    font-weight: 400 !important;
+    letter-spacing: 0.2px;
+}
+
+.pictureEdit1 {
+    width: 9px;
+    cursor: pointer;
+    margin-left: 7px;
+}
+
+.header1-bonus {
+    font-size: 9px;
+}
+
+.salary1 {
+    font-size: 10px;
+    color: gray;
+    text-align: center;
+}
+
+.salary2 {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.salary3 {
+    font-size: 10px;
+    color: gray;
+}
+
+.salary4 {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.salary-bonusAllsolid4 {
+    margin-left: 0px;
+}
+
+.imagelink-1 {
+    width: 11px;
+}
+
+.like-smile {
+    width: 12px;
+}
+
+.bottomsolid-salarybonus {
+    border-bottom: 2px #6CBDEB solid;
+    font-size: 10px;
+    text-align: center;
+}
+
+.cd-F4F6F9 {
+    background-color: #F4F6F9;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.term-circle-pass-bonus{
+    height: 20px;
+    width: 20px;
+    font-size: 10px;
+    border-radius: 100%;
+    border: 2px;
+    border-style: solid;
+    border-color: #23b3f1 !important;
+    background-color: #23b3f1  ;
+    color: white;
+    text-align: center;
+}
+.term-circle-running-bonus{
+    height: 20px;
+    width: 20px;
+    font-size: 10px;
+    border-radius: 100%;
+    border: 2px;
+    border-style: solid;
+    border-color: #23b3f1 !important;
+    text-align: center;
+}
+.term-circle-next-bonus{
+    height: 20px;
+    width: 20px;
+    font-size: 10px;
+    border-radius: 100%;
+    border: 2px;
+    border-style:dotted;
+    border-color: #23b3f1 !important;
+    text-align: center;
+}
+/*.step-line-term{
+    border-style: solid;
+    border-color: #23b3f1 !important;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    margin-top: 12px;
+}
+.step-line-term-next{
+    border-style: dotted;
+    border-color: #23b3f1 !important;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    margin-top: 12px;
+}
+.step-line{
+    border-style: solid;
+    border-color: #23b3f1 !important;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    margin-top: 8px;
+}*/
+
+.bonus-employee1 {
+    text-transform: uppercase;
+    font-size: 10px;
+    text-align: center;
+}
+
+.bonus-title1 {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.bonus-rank1 {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.bonus-Bonus1 {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.bonus-SG1 {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.bonus-Eval1 {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.bonus-Adj1 {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.bonus-Final1 {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.bonus-Pay1 {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+
+.bonus-Department {
+    width: 12px;
+}
+
+.F4F6F9-Accounts {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: -1px;
+}
+
+.fff-white {
+    border: none;
+    background-color: white;
+}
+
+.ladyjpg {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.bonus-user {
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: -0.4px;
+}
+
+.bonus-Position {
+    border-right: 1px lightgray solid;
+    font-size: 9px;
+    letter-spacing: -0.4px;
+    font-weight: 500;
+}
+
+.bonus-rank {
+    border-right: 1px lightgray solid;
+    font-size: 9px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.bonus-Bonus {
+    border-right: 1px lightgray solid;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: -0.7px;
+    text-align: center;
+}
+
+.bonus-SG {
+    border-right: 1px lightgray solid;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: -0.7px;
+    margin-left: 18px;
+}
+
+.bonus-Eval {
+    border-right: 1px lightgray solid;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: -0.7px;
+    margin-left: 18px;
+}
+
+.bonus-Adjustment {
+    border-right: 1px lightgray solid;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: -0.7px;
+}
+
+.bonus-finaladjustment {
+    font-size: 9px;
+    font-weight: 500;
+    width: 90px;
+    letter-spacing: -0.7px;
+}
+
+.bonus-Pay {
+    border-left: 1px lightgray solid;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: -0.7px;
+    margin-left: -5px;
+}
+
+.bonus-Payable {
+    font-size: 9px;
+    border-left: 1px lightgray solid;
+    font-weight: 500;
+    letter-spacing: -0.7px;
+    margin-left: -7px;
+}
+
+.finaladjustment-ml {
+    margin-left: -5px;
+}
+
+.crd-bonus-notborder {
+    border: none;
+}
+
+.width1 {
+    width: 12px;
+    margin-left: 3px;
+}
+
+.width2 {
+    width: 12px;
+    cursor: pointer;
+    margin-left: 3px;
+}
+
+.width3 {
+    width: 12px;
+    cursor: pointer;
+}
+
+.Departments12 {
+    font-size: 9px;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* start */
+
+.container-bonus1 {
+    width: 100%;
+    color: white;
+    background: #2979FF;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20%;
+}
+
+.progressbar-bonus {
+    counter-reset: step;
+    color: black;
+}
+
+.progressbar-bonus li {
+    position: relative;
+    list-style: none;
+    float: left;
+    width: 33.33%;
+    text-align: center;
+}
+
+/* Circles */
+.progressbar-bonus li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d8d8d8;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: #d8d8d8;
+    /* Center # in circle */
+    line-height: 39px;
+}
+
+.progressbar-bonus li:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #d8d8d8;
+    top: 20px;
+    /*half of height Parent (li) */
+    left: -50%;
+    z-index: -1;
+}
+
+.progressbar-bonus li:first-child:after {
+    content: none;
+}
+
+.progressbar-bonus li.active:before {
+    background: #0099e6;
+    color: white;
+    content: "E1";
+}
+
+.progressbar-bonus li.active+li:after {
+    background: #0099e6;
+}
+
+
+/* css */
+
+
+
+section {
+    margin-bottom: 20px;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    margin-top: 20px;
+    padding: 0
+}
+
+section p,
+section pre {
+    margin-left: 120px;
+}
+
+section pre {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 3px
+}
+
+h2 {
+    margin: 0 0 10px 0;
+}
+
+
+.example {
+    float: left;
+    margin-right: 20px;
+}
+
+@media (min-width: 481px) {
+    section {
+        width: 45%;
+        float: left;
+    }
+
+    section:nth-child(odd) {
+        clear: both;
+    }
+}
