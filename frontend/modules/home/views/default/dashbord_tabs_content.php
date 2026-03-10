@@ -154,7 +154,7 @@ if ($tab == 'team') {
 
                 <div class="d-flex justify-content-between align-items-center mt-3" id="content-0-data">
                     <div class="col-4 text-end">
-                        <p class="small-text-last mb-0"><?= Yii::t('app', 'Last Updated on') ?></p>
+                        <p class="small-text-last mb-0"><?= Yii::t('app', 'Last') ?></p>
                         <strong class="small-text-value" id="KFI-last-0">-</strong>
                         <!-- แก้ไขจาก KFI-lasr-0 เป็น KFI-last-0 -->
                     </div>
@@ -176,7 +176,7 @@ if ($tab == 'team') {
                         <?php } ?>
                     </div>
                     <div class="col-4 text-start">
-                        <p class="small-textKFI mb-0"><?= Yii::t('app', 'Due Update Date') ?></p>
+                        <p class="small-textKFI mb-0"><?= Yii::t('app', 'Due') ?></p>
                         <strong class="small-text-value" id="KFI-due-0">-</strong>
                     </div>
                 </div>
@@ -308,7 +308,7 @@ if ($tab == 'team') {
 
             <div class="d-flex justify-content-between align-items-center mt-3">
                 <div class="col-4 text-end">
-                    <p class="small-text-last mb-0"><?= Yii::t('app', 'Last Updated on') ?></p>
+                    <p class="small-text-last mb-0"><?= Yii::t('app', 'Last') ?></p>
                     <strong class="small-text-value" id="KGI-last-0">-</strong>
                 </div>
                 <div class="col-4 text-center">
@@ -345,7 +345,7 @@ if ($tab == 'team') {
                     <!-- <strong class="bold-text" id="KGI-count-0">-</strong> -->
                 </div>
                 <div class="col-4 text-start">
-                    <p class="small-textKGI mb-0"><?= Yii::t('app', 'Due Update Date') ?></p>
+                    <p class="small-textKGI mb-0"><?= Yii::t('app', 'Due') ?></p>
                     <strong class="small-text-value" id="KGI-due-0">-</strong>
                 </div>
             </div>
@@ -478,7 +478,7 @@ if ($tab == 'team') {
 
             <div class="d-flex justify-content-between align-items-center mt-3">
                 <div class="col-4 text-end">
-                    <p class="small-text-last mb-0"><?= Yii::t('app', 'Last Updated on') ?></p>
+                    <p class="small-text-last mb-0"><?= Yii::t('app', 'Last') ?></p>
                     <strong class="small-text-value" id="KPI-last-0">-</strong>
                 </div>
                 <div class="col-4 text-center">
@@ -515,7 +515,7 @@ if ($tab == 'team') {
                     <!-- <strong class="bold-text" id="KPI-count-0">-</strong> -->
                 </div>
                 <div class="col-4 text-start">
-                    <p class="small-textKPI mb-0"><?= Yii::t('app', 'Due Update Date') ?></p>
+                    <p class="small-textKPI mb-0"><?= Yii::t('app', 'Due') ?></p>
                     <strong class="small-text-value" id="KPI-due-0">-</strong>
                 </div>
             </div>

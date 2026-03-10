@@ -7,30 +7,38 @@ use frontend\models\hrvc\User;
 
 ?>
 <div class="col-12">
-    <div class="d-flex align-items-center justify-content-end gap-2 pl-0 pr-0">
-        <div class="header-name mr-14">
+    <div class="d-flex align-items-center justify-content-end pl-0 pr-0" style="gap: 8px; height: 55px;">
+        <!-- Global Search -->
+        <div style="flex: 1; max-width: 280px; margin-right: auto; margin-left: 8px;">
+            <div style="position: relative;">
+                <img src="<?= Yii::$app->homeUrl ?>image/search.svg" 
+                    style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 13px; height: 13px; opacity: 0.45;">
+                <input type="text" id="globalSearch" 
+                    placeholder="<?= Yii::t('app', 'Search...') ?>" 
+                    autocomplete="off"
+                    style="width: 100%; height: 32px; padding: 0 12px 0 30px; border: 1px solid #E0E0E0; border-radius: 6px; font-size: 12px; background: #F8F9FA; outline: none; transition: all 0.15s ease; color: #333;">
+            </div>
+        </div>
+
+        <!-- User Name & Title -->
+        <div class="header-name">
             <?= isset(Yii::$app->user->id) ? User::userHeaderName() : 'Login' ?>
-            <div class="header-pepartment text-truncate text-end">
+            <div class="header-pepartment text-end">
                 <?= isset(Yii::$app->user->id) ? User::employeeTitleDepartment() : '' ?>
             </div>
         </div>
 
-        <div class="profile-dropdown mr-22">
-            <div class="row pl-11">
-                <div class="col-5 text-center pr-0 pl-0">
-                    <img src="<?= Yii::$app->homeUrl ?><?= isset(Yii::$app->user->id) ? User::userHeaderImage() : 'image/user.png' ?>" class="width-ehsan-small" id="showMenu2">
-                </div>
-                <div class="col-5 profile-arrow-menu text-start pr-0 pl-10">
-                    <img src="<?= Yii::$app->homeUrl ?>images/icons/Settings/down-blue.svg" id="showMenu">
-                </div>
-            </div>
+        <!-- Profile Pill -->
+        <div class="profile-dropdown" style="cursor: pointer; position: relative;" onclick="toggleProfileMenu()">
+            <img src="<?= Yii::$app->homeUrl ?><?= isset(Yii::$app->user->id) ? User::userHeaderImage() : 'image/user.png' ?>" class="width-ehsan-small">
+            <img src="<?= Yii::$app->homeUrl ?>images/icons/Settings/down-blue.svg" class="ms-1" style="width: 10px;">
             <div class="profile-box-menu text-start profile-menu" id="profileMenu">
                 <?php
                 if (isset(Yii::$app->user->id)) {
                     $employeeId = User::employeeIdFromUserId(); ?>
                     <a href="<?= Yii::$app->homeUrl ?>setting/employee/employee-profile/<?= ModelMaster::encodeParams(["employeeId" => $employeeId]) ?>"
                         style="text-decoration:none;color:#30313D;">
-                        <div class="col-12  head-list-menu">
+                        <div class="col-12 head-list-menu">
                             <img src="<?= Yii::$app->homeUrl ?>images/icons/black-icons/navbar/profile.svg" class="mr-12 profile-menu-icon">
                             <?= Yii::t('app', 'My Profile') ?>
                         </div>
@@ -38,16 +46,16 @@ use frontend\models\hrvc\User;
                 <?php
                 }
                 ?>
-                <div class="col-12  head-list-menu">
+                <div class="col-12 head-list-menu">
                     <img src="<?= Yii::$app->homeUrl ?>images/icons/black-icons/navbar/setting.svg" class="mr-12 profile-menu-icon">
                     <?= Yii::t('app', 'Setting') ?>
                 </div>
-                <div class="col-12  head-list-menu">
+                <div class="col-12 head-list-menu">
                     <img src="<?= Yii::$app->homeUrl ?>images/icons/black-icons/navbar/help.svg" class="mr-12 profile-menu-icon">
                     <?= Yii::t('app', 'Help & Support') ?>
                 </div>
-                <div class="col-12 mt-22 pt-22 pl-22 pr-22">
-                    <a href="<?= Yii::$app->homeUrl ?>site/logout" class="" style="text-decoration:none;color:#FFFFFF;">
+                <div class="col-12 mt-1 px-3">
+                    <a href="<?= Yii::$app->homeUrl ?>site/logout" style="text-decoration:none;color:#FFFFFF;">
                         <div class="logout-button text-center">
                             <img src="<?= Yii::$app->homeUrl ?>images/icons/black-icons/navbar/logout.svg" class="mr-13 profile-menu-icon">
                             <?= Yii::t('app', 'Logout') ?>
@@ -103,19 +111,15 @@ use frontend\models\hrvc\User;
         }
         ?>
         <input type="hidden" value="<?= $text ?>">
-        <div class="language-dropdown mr-22">
-            <div class="row pl-11">
-                <div class="col-4 text-center pr-0 pl-0">
-                    <img src="<?= Yii::$app->homeUrl ?>images/flag/<?= $image ?>.svg" class="width-ehsan-small" id="showCountryMenu">
-                </div>
-                <div class="col-8 profile-arrow-menu pr-0 pl-10">
-                    <span class="language-text" id="showCountryMenu3"><?= $text ?></span>
-                    <img src="<?= Yii::$app->homeUrl ?>images/icons/Settings/down-blue.svg" class="ml-6" style="margin-top:-5px;" id="showCountryMenu2">
-                </div>
-            </div>
+
+        <!-- Language Pill -->
+        <div class="language-dropdown" style="cursor: pointer; position: relative;" onclick="toggleCountryMenu()">
+            <img src="<?= Yii::$app->homeUrl ?>images/flag/<?= $image ?>.svg" style="width: 22px; height: 22px; border-radius: 50%;">
+            <span class="language-text ms-1" style="font-size: 12px; font-weight: 600;"><?= $text ?></span>
+            <img src="<?= Yii::$app->homeUrl ?>images/icons/Settings/down-blue.svg" class="ms-1" style="width: 10px;">
             <div class="country-box-menu text-start" id="countryMenu">
                 <a href="?language=jp" style="text-decoration:none;color:#30313D;display:<?= $text == 'JP' ? 'none' : '' ?>">
-                    <div class="col-12  head-list-menu">
+                    <div class="col-12 head-list-menu">
                         <img src="<?= Yii::$app->homeUrl ?>images/flag/japan.svg" class="mr-12 profile-menu-icon">
                         日本語
                     </div>
@@ -151,7 +155,7 @@ use frontend\models\hrvc\User;
                     </div>
                 </a>
                 <a href="?language=es" style="text-decoration:none;color:#30313D;display:<?= $text == 'ES' ? 'none' : '' ?>">
-                    <div class="col-12 head-list-menu" style="border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;">
+                    <div class="col-12 head-list-menu">
                         <img src="<?= Yii::$app->homeUrl ?>images/flag/span.svg" class="mr-12 profile-menu-icon">
                         Español
                     </div>
@@ -159,11 +163,58 @@ use frontend\models\hrvc\User;
             </div>
         </div>
 
-        <div class="profile-dropdown">
-            <div class="text-center pt-4">
-                <img src="<?= Yii::$app->homeUrl ?>images/icons/Settings/no-noti.svg" class="bell-noti">
-                <img src="<?= Yii::$app->homeUrl ?>images/icons/Settings/down-blue.svg" class="profile-arrow-menu ml-8">
-            </div>
+        <!-- Notification Pill (gray = no notifications) -->
+        <div class="notification-pill" style="margin-right: 8px;">
+            <img src="<?= Yii::$app->homeUrl ?>images/icons/Settings/no-noti.svg" class="bell-noti" style="opacity: 0.5;">
+            <img src="<?= Yii::$app->homeUrl ?>images/icons/Settings/down-blue.svg" class="ms-1" style="width: 10px; opacity: 0.5;">
         </div>
     </div>
 </div>
+
+<script>
+function toggleProfileMenu() {
+    var menu = document.getElementById('profileMenu');
+    var countryMenu = document.getElementById('countryMenu');
+    if (countryMenu) countryMenu.style.display = 'none';
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+function toggleCountryMenu() {
+    var menu = document.getElementById('countryMenu');
+    var profileMenu = document.getElementById('profileMenu');
+    if (profileMenu) profileMenu.style.display = 'none';
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Close menus when clicking outside
+document.addEventListener('click', function(e) {
+    var profileDropdown = document.querySelector('.profile-dropdown[onclick]');
+    var langDropdown = document.querySelector('.language-dropdown[onclick]');
+    var profileMenu = document.getElementById('profileMenu');
+    var countryMenu = document.getElementById('countryMenu');
+    
+    if (profileMenu && profileDropdown && !profileDropdown.contains(e.target)) {
+        profileMenu.style.display = 'none';
+    }
+    if (countryMenu && langDropdown && !langDropdown.contains(e.target)) {
+        countryMenu.style.display = 'none';
+    }
+});
+
+// Global search focus effect
+document.addEventListener('DOMContentLoaded', function() {
+    var searchInput = document.getElementById('globalSearch');
+    if (searchInput) {
+        searchInput.addEventListener('focus', function() {
+            this.style.borderColor = '#2580D3';
+            this.style.background = '#FFFFFF';
+            this.style.boxShadow = '0 0 0 2px rgba(37,128,211,0.1)';
+        });
+        searchInput.addEventListener('blur', function() {
+            this.style.borderColor = '#E0E0E0';
+            this.style.background = '#F8F9FA';
+            this.style.boxShadow = 'none';
+        });
+    }
+});
+</script>

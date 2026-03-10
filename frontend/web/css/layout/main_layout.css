@@ -35,19 +35,22 @@
     right: 0;
     width: calc(100% - 235px);
     position: fixed;
-    z-index: 5;
-    height: 60px;
-    padding-top: 12px;
-    padding-right: 12px;
+    z-index: 50;
+    height: 56px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
     box-sizing: border-box;
     transition: width 0.3s ease;
+    background: #FFFFFF;
+    border-bottom: 1px solid #F0F0F0;
 }
 
 .submain-content {
     width: 100%;
     max-width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     position: relative !important;
     box-sizing: border-box;
     flex: 1;
@@ -222,31 +225,35 @@ body {
 
 .header-name {
     text-align: right !important;
-    font-size: 22px;
+    font-size: 14px;
     font-weight: 500;
-    margin-top: -5px;
-    margin-right: 14px;
-    width: 350px;
+    line-height: 1.2;
+    margin: 0;
+    max-width: 260px;
     padding-right: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .profile-dropdown {
-    background-color: #DEE9F4;
-    border-radius: 19.5px;
-    height: 40px;
-    width: 67px;
-    padding-left: 4px;
-    padding-right: 0px;
-    padding-top: 3px;
+    background-color: #F0F2F4;
+    border-radius: 20px;
+    height: 34px;
+    width: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .language-dropdown {
-    background-color: #DEE9F4;
-    border-radius: 19.5px;
-    height: 40px;
-    padding-left: 4px;
-    padding-top: 3px;
-    width: 94px;
+    background-color: #F0F2F4;
+    border-radius: 20px;
+    height: 34px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .language-label {
@@ -261,8 +268,23 @@ body {
 }
 
 .bell-noti {
-    width: 22px;
-    height: 25px;
+    width: 18px;
+    height: 20px;
+}
+
+.notification-pill {
+    background-color: #F0F2F4;
+    border-radius: 20px;
+    height: 34px;
+    width: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.notification-pill.has-notifications {
+    background-color: #DEE9F4;
 }
 
 .center-center {

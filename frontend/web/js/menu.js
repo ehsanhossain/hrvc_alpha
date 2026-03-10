@@ -28,7 +28,7 @@ function hideGroupMenu(groupname) {
           dataType: "json",
           url: url,
           data: { groupname: groupname, type: "hide" },
-          success: function (data) {},
+          success: function (data) { },
      });
 }
 function showGroupMenu(groupname) {
@@ -41,25 +41,19 @@ function showGroupMenu(groupname) {
           dataType: "json",
           url: url,
           data: { groupname: groupname, type: "show" },
-          success: function (data) {},
+          success: function (data) { },
      });
 }
 
 $(document).mouseup(function (e) {
      var profile = $("#profileMenu");
-     if (!profile.is(e.target) && profile.has(e.target).length === 0) {
-          if ($("#showMenu").is(e.target) || $("#showMenu2").is(e.target)) {
-               $("#profileMenu").toggle();
-          } else {
-               profile.hide();
-          }
+     var profileDropdown = profile.closest('.profile-dropdown');
+     if (!profile.is(e.target) && profile.has(e.target).length === 0 && !profileDropdown.is(e.target) && profileDropdown.has(e.target).length === 0) {
+          profile.hide();
      }
      var country = $("#countryMenu");
-     if (!country.is(e.target) && country.has(e.target).length === 0) {
-          if ($("#showCountryMenu").is(e.target) || $("#showCountryMenu2").is(e.target) || $("#showCountryMenu3").is(e.target)) {
-               $("#countryMenu").toggle();
-          } else {
-               country.hide();
-          }
+     var langDropdown = country.closest('.language-dropdown');
+     if (!country.is(e.target) && country.has(e.target).length === 0 && !langDropdown.is(e.target) && langDropdown.has(e.target).length === 0) {
+          country.hide();
      }
 });
