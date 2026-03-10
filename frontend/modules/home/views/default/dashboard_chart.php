@@ -50,7 +50,7 @@ $months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct',
 $categories = array_map(fn($month) => $month . ' ' . $currentYearShort, $months);
 ?>
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="<?= Yii::$app->homeUrl ?>js/highcharts.js"></script>
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -63,12 +63,7 @@ $categories = array_map(fn($month) => $month . ' ' . $currentYearShort, $months)
         // $baseUrl = Yii::$app->homeUrl;
         ?>
 
-        var $baseUrl = window.location.protocol + "/ /" + window.location.host;
-        if (window.location.host == 'localhost') {
-            $baseUrl = window.location.protocol + "//" + window.location.host + '/HRVC/frontend/web/';
-        } else {
-            $baseUrl = window.location.protocol + "//" + window.location.host + '/';
-        }
+        var $baseUrl = '<?= Yii::$app->homeUrl ?>';
         $url = $baseUrl;
 
         const renderChart = (currentCategory, type) => {

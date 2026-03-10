@@ -19,8 +19,10 @@ AppAsset::register($this);
 
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
-    <!-- <link rel="shortcut icon" href="<?= Yii::$app->request->baseUrl; ?>/image/logo-hrvc.png?v=1" type="image/x-icon" /> -->
-    <link rel="shortcut icon" href="<?= Yii::$app->request->baseUrl; ?>/image/+.svg?v=1" type="image/x-icon" />
+    <link rel="shortcut icon" href="<?= Yii::$app->request->baseUrl; ?>/image/hrvc-favicon.png?v=2" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php $this->registerCsrfMetaTags() ?>
@@ -72,7 +74,12 @@ JS;
 
     <main role="main">
         <div class="d-flex align-items-start justify-content-start">
-            <div class="menu-left-side">
+            <div class="menu-left-side" id="sidebar">
+                <div class="sidebar-toggle-btn" id="sidebarToggle" onclick="toggleSidebar()" title="Collapse sidebar">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M15 4L9 10L15 16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
                 <?= $this->render("@frontend/views/site/menu_left")
                 ?>
             </div>
@@ -87,6 +94,19 @@ JS;
             </div>
         </div>
     </main>
+    <script>
+    function toggleSidebar() {
+        document.body.classList.toggle('sidebar-collapsed');
+        var collapsed = document.body.classList.contains('sidebar-collapsed');
+        localStorage.setItem('hrvc_sidebar_collapsed', collapsed ? '1' : '0');
+    }
+    // Restore sidebar state on load
+    (function() {
+        if (localStorage.getItem('hrvc_sidebar_collapsed') === '1') {
+            document.body.classList.add('sidebar-collapsed');
+        }
+    })();
+    </script>
     <?php
     if (class_exists('yii\debug\Module')) {
         $this->off(\yii\web\View::EVENT_END_BODY, [\yii\debug\Module::getInstance(), 'renderToolbar']);

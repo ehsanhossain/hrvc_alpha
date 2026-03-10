@@ -17,41 +17,17 @@
     max-height: 100%;
     min-height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
     scrollbar-width: none;
     padding: 45px 9px 20px 9px;
     z-index: 100;
+    transition: width 0.3s ease;
 }
 
 .main-content {
-    /* padding-left: 0; */
-    /* position: relative; */
     margin-left: 235px;
-    min-height: 80vh;
-    /* box-sizing: border-box; */
-    /* flex: 1; */
-    /* display: flex; */
-    /* flex-direction: column; */
-}
-
-.background-main-whilte {
-    background-color: white;
-    margin-left: -28px;
-    margin-right: -28px;
-    margin-top: 40px;
-    height: auto;
-    min-height: 95vh;
-    /* เต็มหน้าจอในแนวตั้ง */
-    padding: 30px;
-}
-
-.empty-information {
-    padding: 30px;
-    gap: 7.721px;
-    flex-shrink: 0;
-    border-radius: 7.721px;
-    border: 1.544px dashed var(--Stroke-Bluish-Gray, #BBCDDE);
-    background: #F9F9F9;
-    min-height: calc(100vh - 80px);
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
 }
 
 .header-top {
@@ -64,26 +40,142 @@
     padding-top: 12px;
     padding-right: 12px;
     box-sizing: border-box;
+    transition: width 0.3s ease;
 }
 
 .submain-content {
     width: 100%;
-    /* ขยายเต็มความกว้าง */
     max-width: 100%;
-    /* จำกัดไม่ให้เกินขนาดหน้าจอ */
     padding-left: 30px;
-    /* ระยะห่างด้านซ้าย */
     padding-right: 30px;
-    /* ระยะห่างด้านขวา */
     position: relative !important;
     box-sizing: border-box;
     flex: 1;
+}
+
+/* ========== Sidebar Toggle Button ========== */
+.sidebar-toggle-btn {
+    position: absolute;
+    top: 14px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.25s ease;
+    z-index: 101;
+}
+
+.sidebar-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-toggle-btn svg {
+    transition: transform 0.3s ease;
+}
+
+/* ========== Collapsed State ========== */
+.sidebar-collapsed .menu-left-side {
+    width: 65px;
+    padding: 45px 6px 20px 6px;
+}
+
+.sidebar-collapsed .main-content {
+    margin-left: 65px;
+}
+
+.sidebar-collapsed .header-top {
+    width: calc(100% - 65px);
+}
+
+.sidebar-collapsed .sidebar-toggle-btn svg {
+    transform: rotate(180deg);
+}
+
+/* Hide text labels when collapsed */
+.sidebar-collapsed .btn-group-menu .col-8,
+.sidebar-collapsed .btn-group-menu .col-2:last-child,
+.sidebar-collapsed .first-layer-manu a,
+.sidebar-collapsed .first-layer-manu span,
+.sidebar-collapsed .second-layer-menu,
+.sidebar-collapsed .third-layer-menu,
+.sidebar-collapsed .text-under-logo,
+.sidebar-collapsed .sidebar-logo-full {
+    display: none !important;
+}
+
+.sidebar-collapsed .sidebar-logo-collapsed {
+    display: block !important;
+}
+
+.sidebar-collapsed .btn-hrvc-home span+span,
+.sidebar-collapsed .btn-hrvc-home a {
+    font-size: 0;
+}
+
+.sidebar-collapsed .btn-hrvc-home img {
+    margin-right: 0;
+}
+
+.sidebar-collapsed .btn-group-menu .col-2 {
+    width: 100%;
+    padding-left: 10px;
+}
+
+.sidebar-collapsed .btn-group-menu .row {
+    justify-content: center;
+}
+
+.sidebar-collapsed .first-layer-manu {
+    text-align: center;
+    padding-left: 0;
+}
+
+.sidebar-collapsed .first-layer-manu img.first-layer-icon {
+    margin-right: 0;
+}
+
+.sidebar-collapsed .sidebar-logo-wrap {
+    text-align: center;
+}
+
+.sidebar-collapsed .login-remember-text {
+    display: none;
+}
+
+/* Prevent body scroll during transition */
+body {
+    overflow-x: hidden;
 }
 
 .small-content {
     border-radius: 6px;
     padding-top: 3px;
     padding-bottom: 3px;
+}
+
+.background-main-whilte {
+    background-color: white;
+    margin-left: -28px;
+    margin-right: -28px;
+    margin-top: 40px;
+    height: auto;
+    min-height: 95vh;
+    padding: 30px;
+}
+
+.empty-information {
+    padding: 30px;
+    gap: 7.721px;
+    flex-shrink: 0;
+    border-radius: 7.721px;
+    border: 1.544px dashed var(--Stroke-Bluish-Gray, #BBCDDE);
+    background: #F9F9F9;
+    min-height: calc(100vh - 80px);
 }
 
 .ligth-gray-box {

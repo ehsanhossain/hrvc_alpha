@@ -50,6 +50,8 @@ $statusTexArr = Status::allStatusText();
 $form = ActiveForm::begin([
     'id' => 'create-employee',
     'method' => 'post',
+    'enableClientValidation' => false,
+    'enableAjaxValidation' => false,
     'options' => [
         'enctype' => 'multipart/form-data',
         'autocomplete' => 'off'
@@ -57,6 +59,28 @@ $form = ActiveForm::begin([
     'action' => Yii::$app->homeUrl . $urlSubmit
 
 ]);
+?>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('create-employee');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            if (form.dataset.submitting === '1') {
+                e.preventDefault();
+                return false;
+            }
+            form.dataset.submitting = '1';
+            // Disable all submit buttons
+            var btns = form.querySelectorAll('button[type="submit"]');
+            btns.forEach(function(btn) {
+                btn.disabled = true;
+                btn.style.opacity = '0.7';
+            });
+        });
+    }
+});
+</script>
+<?php
 ?>
 <!-- Flatpickr CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -1657,7 +1681,7 @@ $form = ActiveForm::begin([
 
     <input type="hidden" id="certificateDataHidden" name="certificateData">
     <input type="hidden" id="cerDate" name="cerDate" value="0">
-    <input type="hidden" id="darf" name="darf">
+    <input type="hidden" id="darf" name="darf" value="0">
     <input type="hidden" id="savePermission" value="">
 
     <!-- container สำหรับเก็บ input ไฟล์ทั้งหมด -->

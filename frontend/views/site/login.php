@@ -7,281 +7,169 @@
 use yii\bootstrap5\Html;
 use yii\bootstrap5\ActiveForm;
 
-$this->title = 'Login';
+$this->title = 'HRVC Login';
 ?>
 
-<style>
-    body {
-        background-color: #f5f5f5;
-    }
+<div class="login-page">
+    <div class="login-card">
+        <div class="login-card-inner">
+            <?php $form = ActiveForm::begin([
+                'method' => 'post',
+                'options' => [
+                    'enctype' => 'multipart/form-data',
+                    'style' => 'width:100%;display:flex;flex-direction:column;align-items:center;gap:48px;',
+                ],
+                'fieldConfig' => [
+                    'options' => ['tag' => false],
+                    'template' => '{input}{error}',
+                ],
+            ]); ?>
 
-    .login-container {
-        display: flex;
-        padding: 40px 40px 40px 40px;
-        /* flex-wrap: wrap; */
-        justify-content: center;
-        /* align-items: center; */
-        height: 100vh;
-    }
-
-    .text-welcome {
-        font-size: 28px;
-        font-weight: bold;
-        margin-top: 20px;
-        color: #30313D;
-    }
-
-    .text-sub-welcome {
-        font-size: 16px;
-        color: #666;
-        margin-bottom: 30px;
-    }
-
-    .form-label {
-        color: var(--HRVC---Text-Black, #30313D);
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 19.286px;
-        /* 107.143% */
-    }
-
-    .form-control {
-        border-left: none;
-        border-radius: 5px;
-        height: 45px;
-        background-color: var(--bs-tertiary-bg);
-        /* Set background to white */
-    }
-
-    .form-password {
-        border-left: none;
-        border-radius: 5px;
-        height: 45px;
-        background-color: white;
-    }
-
-    .btn-primary {
-        background-color: #2580D3;
-        border: none;
-        height: 50px;
-        font-size: 16px;
-        font-weight: bold;
-    }
-
-    .btn-primary:hover {
-        background-color: #1c6cb5;
-    }
-
-    .problem {
-        color: var(--HRVC---Light-Text, #94989C);
-        leading-trim: both;
-        text-edge: cap;
-        font-size: 11.633px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-    }
-
-    .problem-contact {
-        color: var(--Primary-Blue---HRVC, #2580D3);
-        leading-trim: both;
-        text-edge: cap;
-        font-size: 11.633px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        text-decoration-line: underline;
-        text-decoration-style: solid;
-        text-decoration-skip-ink: none;
-        text-decoration-thickness: auto;
-        text-underline-offset: auto;
-        text-underline-position: from-font;
-    }
-
-
-    .content-head {
-        /* display: flex; */
-        text-align: center;
-        /* justify-content: center; */
-        margin-bottom: 31px;
-    }
-
-    .content-center {
-        /* display: flex; */
-        text-align: center;
-        /* justify-content: center; */
-    }
-
-    .footer-image {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-
-    }
-
-    .footer-image img {
-        max-width: 100%;
-        /* ปรับให้รูปยืดหยุ่นตามพื้นที่ */
-        height: auto;
-        /* รักษาสัดส่วนของรูป */
-    }
-
-    .head-image img {
-        max-width: 100%;
-        /* ปรับให้รูปยืดหยุ่นตามพื้นที่ */
-        height: auto;
-        /* รักษาสัดส่วนของรูป */
-    }
-
-    .login-container {
-        position: relative;
-        overflow: hidden;
-        /* align-items: center; */
-        /* จัดให้อยู่กึ่งกลางแนวตั้ง */
-    }
-
-    .login-body {
-        /* margin-top: 100px; */
-        position: relative;
-        overflow: hidden;
-        align-items: center;
-        /* จัดให้อยู่กึ่งกลางแนวตั้ง */
-    }
-
-    .width-rof-new {
-        position: relative;
-        /* ใช้ position relative เพื่อให้ absolute ของ footer อ้างอิงตำแหน่งจาก container นี้ */
-        height: 100%;
-        width: 100%;
-        /* ให้ container เต็มความสูงของหน้าจอ */
-        /* overflow: hidden; */
-        /* ซ่อนส่วนเกินที่อาจล้นออกมา */
-        /* padding: 0px 100px 0px 100px; */
-    }
-
-    .hide-scrollbar {
-        overflow: auto;
-        /* หรือ overflow: scroll */
-        scrollbar-width: none;
-        /* Firefox */
-    }
-
-    .hide-scrollbar::-webkit-scrollbar {
-        display: none;
-        /* Chrome, Safari, Edge */
-    }
-
-    @media (min-width: 1920px) and (min-height: 945px) {
-        .width-rof-new {
-            padding-left: 100px;
-            padding-right: 100px;
-        }
-    }
-
-
-
-    .input-group-icon {
-        display: flex;
-        align-items: center;
-        padding: 0.375rem 0.75rem;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
-        color: var(--bs-body-color);
-        text-align: center;
-        white-space: nowrap;
-        background-color: var(--bs-tertiary-bg);
-        border: var(--bs-border-width) solid var(--bs-border-color);
-        border-right: none;
-        /* Remove the left border */
-        border-radius: var(--bs-border-radius);
-    }
-</style>
-<!-- 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    document.getElementById('screen-size').innerText = `Current screen size: ${width}px x ${height}px`;
-});
-
-// อัปเดตขนาดเมื่อมีการปรับหน้าต่าง
-window.addEventListener('resize', () => {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    document.getElementById('screen-size').innerText = `Current screen size: ${width}px x ${height}px`;
-});
-</script> -->
-<?php $form = ActiveForm::begin([
-    'method' => 'post',
-    'options' => [
-        'enctype' => 'multipart/form-data',
-    ],
-]); ?>
-<div class="row hide-scrollbar" style="--bs-gutter-x:0px;">
-    <div class="col-lg-6 col-12" style="padding:20px 10px 20px 30px;">
-        <div class="head-image">
-            <img src="<?= Yii::$app->homeUrl ?>image/title-login.svg" class="width-HRVC-new">
-        </div>
-        <div class="login-body">
-            <div class="content-head">
-                <!-- <div id="screen-size" style="font-size: 16px; color: #333;">แสดงขนาดหน้าจอ</div> -->
-                <div class="text-welcome">Welcome</div>
-                <div class="text-sub-welcome">Welcome back! Please enter your details.</div>
-            </div>
-            <div class="offset-lg-2 col-lg-8">
-                <div class="mb-4">
-                    <label class="form-label">Email</label>
-                    <div class="input-group">
-                        <span class="input-group-icon">
-                            <img src="<?= Yii::$app->homeUrl ?>image/mail-login.svg" class="">
-                        </span>
-                        <input type="email" name="LoginForm[username]" class="form-control" required
-                            placeholder="email@tokyoconsultingfirmlimited.com">
+            <!-- Header: Logo + Subtitle -->
+            <div class="login-header-fields">
+                <div class="login-logo-block">
+                    <div class="login-logo">
+                        <img src="<?= Yii::$app->homeUrl ?>image/hrvc-logo.svg" alt="HRVC" style="width:100%;height:100%;object-fit:contain;">
                     </div>
+                    <div class="login-subtitle">Enter your credentials to access HRVC.</div>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">Password</label>
-                    <div class="input-group">
-                        <span class="input-group-icon">
-                            <img src="<?= Yii::$app->homeUrl ?>image/lock-login.svg" class="">
-                        </span>
-                        <input id="password" type="password" name="LoginForm[password]" class="form-control" required
-                            placeholder="password">
-                        <span class="input-group-text" style="border-left: none;"
-                            onmousedown="javascript:showPassword()" onmouseup="javascript:setPassword()">
-                            <img src="<?= Yii::$app->homeUrl ?>image/eye-login.svg" class="">
-                        </span>
+
+                <!-- Flash messages -->
+                <?php if (Yii::$app->session->hasFlash('error')): ?>
+                    <div class="login-alert login-alert-error">
+                        <?= Yii::$app->session->getFlash('error') ?>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-check checkbox-remember">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                            <label class="" for="flexCheckDefault"> Remember Credentials</label>
+                <?php endif; ?>
+                <?php if (Yii::$app->session->hasFlash('success')): ?>
+                    <div class="login-alert login-alert-success">
+                        <?= Yii::$app->session->getFlash('success') ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($model->hasErrors()): ?>
+                    <div class="login-alert login-alert-error">
+                        <?php foreach ($model->getFirstErrors() as $error): ?>
+                            <?= Html::encode($error) ?><br>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+
+                <!-- Input Fields -->
+                <div class="login-fields">
+                    <!-- Work Email -->
+                    <div class="login-field">
+                        <div class="login-label-group">
+                            <label class="login-label" for="login-email">Work Email</label>
+                            <div class="login-input-frame">
+                                <div class="login-input-left">
+                                    <div class="login-input-icon">
+                                        <svg viewBox="0 0 20 20" fill="none">
+                                            <path d="M18.1249 5.62501V14.375C18.1249 15.4105 17.2854 16.25 16.2499 16.25H3.7499C2.71437 16.25 1.8749 15.4105 1.8749 14.375V5.62501M18.1249 5.62501C18.1249 4.58947 17.2854 3.75001 16.2499 3.75001H3.7499C2.71437 3.75001 1.8749 4.58947 1.8749 5.62501M18.1249 5.62501V5.82727C18.1249 6.47838 17.7871 7.08288 17.2326 7.42413L10.9826 11.2703C10.3799 11.6411 9.61986 11.6411 9.01722 11.2703L2.76722 7.42413C2.21269 7.08288 1.8749 6.47838 1.8749 5.82727V5.62501" stroke="#A3A3A3" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <input type="email" id="login-email" name="LoginForm[username]" class="login-input" placeholder="name@company.com" required value="<?= Html::encode($model->username) ?>">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6 text-end">
-                        <span class="problem">Signing Problem?</span> <a class="problem-contact" href="">Contact
-                            Support</a>
+
+                    <!-- Password -->
+                    <div class="login-field">
+                        <div class="login-label-group">
+                            <label class="login-label" for="login-password">Password</label>
+                            <div class="login-input-frame">
+                                <div class="login-input-left">
+                                    <div class="login-input-icon">
+                                        <svg viewBox="0 0 20 20" fill="none">
+                                            <path d="M13.75 8.75006V5.62506C13.75 3.554 12.0711 1.87506 10 1.87506C7.92893 1.87506 6.25 3.554 6.25 5.62506V8.75006M5.625 18.1251H14.375C15.4105 18.1251 16.25 17.2856 16.25 16.2501V10.6251C16.25 9.58953 15.4105 8.75006 14.375 8.75006H5.625C4.58947 8.75006 3.75 9.58953 3.75 10.6251V16.2501C3.75 17.2856 4.58946 18.1251 5.625 18.1251Z" stroke="#A3A3A3" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <input type="password" id="login-password" name="LoginForm[password]" class="login-input" placeholder="Enter password here" required>
+                                </div>
+                                <div class="login-input-right" onclick="hrvcTogglePassword()" title="Show/hide password">
+                                    <svg id="eye-icon" viewBox="0 0 20 20" fill="none">
+                                        <path d="M2.5 10C2.5 10 5 4.375 10 4.375C15 4.375 17.5 10 17.5 10C17.5 10 15 15.625 10 15.625C5 15.625 2.5 10 2.5 10Z" stroke="#A3A3A3" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="#A3A3A3" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="login-forgot" href="javascript:void(0)" onclick="alert('Forgot password feature coming soon.')">Forgot password?</a>
+                    </div>
+
+                    <!-- Remember Me -->
+                    <div class="login-remember-row">
+                        <div class="login-remember-inner">
+                            <div class="login-switch active" id="remember-switch" onclick="hrvcToggleRemember()">
+                                <div class="login-switch-bg"></div>
+                                <div class="login-switch-knob"></div>
+                            </div>
+                            <input type="hidden" name="LoginForm[rememberMe]" id="remember-input" value="1">
+                            <div class="login-remember-text">Remember me</div>
+                        </div>
                     </div>
                 </div>
-                <div class="d-grid gap-2 mt-3">
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+
+            <!-- Login Button -->
+            <button type="submit" class="login-btn">
+                <div class="login-btn-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M8.25 9V5.25C8.25 4.00736 9.25736 3 10.5 3L16.5 3C17.7426 3 18.75 4.00736 18.75 5.25L18.75 18.75C18.75 19.9926 17.7426 21 16.5 21H10.5C9.25736 21 8.25 19.9926 8.25 18.75V15M12 9L15 12M15 12L12 15M15 12L2.25 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                Login
+            </button>
+
+            <!-- Footer -->
+            <div class="login-footer">
+                <div class="login-terms">
+                    By continuing you confirm that you agree with our
+                    <a href="#">Privacy Policy</a>,
+                    <a href="#">Disclosures</a>
+                    &amp;
+                    <a href="#">Terms and Conditions</a>.
+                </div>
+                <div class="login-help">
+                    <span class="login-help-text">Having trouble signing in? </span>
+                    <a class="login-help-link" href="#">Help Center</a>
+                    <div class="login-help-arrow">
+                        <svg viewBox="0 0 10 10" fill="none">
+                            <path d="M1 9.00052L7.80449 1.76102" stroke="#1F6DB3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.18492 1.38054L8.56532 5.56558" stroke="#1F6DB3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.18505 1.38053L3.99999 1.00006" stroke="#1F6DB3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="footer-image pb-10 pl-30 img-fluid">
-            <img src="<?= Yii::$app->homeUrl ?>image/foot-login.svg" class="width-HRVC-new">
+            <?php ActiveForm::end(); ?>
         </div>
-
-    </div>
-    <div class="col-lg-6 col-12 pb-10" style="height:100vh;padding:20px 10px 20px 30px;">
-        <img src="<?= Yii::$app->homeUrl ?>image/roof-new.png" alt="Logo" class="width-rof-new">
     </div>
 </div>
 
-<?php ActiveForm::end(); ?>
+<script>
+function hrvcTogglePassword() {
+    var input = document.getElementById('login-password');
+    var icon = document.getElementById('eye-icon');
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.style.opacity = '1';
+    } else {
+        input.type = 'password';
+        icon.style.opacity = '0.5';
+    }
+}
+
+function hrvcToggleRemember() {
+    var sw = document.getElementById('remember-switch');
+    var input = document.getElementById('remember-input');
+    if (sw.classList.contains('active')) {
+        sw.classList.remove('active');
+        input.value = '0';
+    } else {
+        sw.classList.add('active');
+        input.value = '1';
+    }
+}
+</script>

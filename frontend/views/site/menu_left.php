@@ -9,10 +9,9 @@ $session = Yii::$app->session;
 <div class="col-12" style="min-height:calc(100vh - 60px);">
     <div class="col-12">
         <a href="<?= Yii::$app->homeUrl ?>site/index">
-            <div class="col-12">
-                <img src="<?= Yii::$app->homeUrl ?>image/logo-hrvc-text.svg" class="main-logo" style="max-width:140px;">
-                <!-- <img src="<?= Yii::$app->homeUrl ?>image/logo-hrvc-text.svg" class="main-logo"> -->
-
+            <div class="col-12 sidebar-logo-wrap">
+                <img src="<?= Yii::$app->homeUrl ?>image/hrvc-logo.svg" class="main-logo sidebar-logo-full" style="max-width:140px;">
+                <img src="<?= Yii::$app->homeUrl ?>image/hrvc-collapsed-logo.svg" class="main-logo sidebar-logo-collapsed" style="max-width:32px;display:none;">
             </div>
         </a>
     </div>

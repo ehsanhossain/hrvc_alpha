@@ -28,22 +28,29 @@ $statusTexArr = Status::allStatusText();
                         <?= Yii::t('app', 'Employee Profiles') ?>
                     </div>
                 </div>
-                <div class="col-lg-7 col-12 text-end pb-0 pl-10 pr-10">
-                    <?= $this->render('filter', [
-                        "companies" => $companies,
-                        "statusTexArr" => $statusTexArr,
-                        "companies" => isset($companies) ? $companies : [],
-                        "companyId" =>  isset($companyId) ? $companyId : '',
-                        "branchId" =>  isset($branchId) ? $branchId : '',
-                        "teamId" =>  isset($teamId) ? $teamId : '',
-                        "departmentId" =>  isset($departmentId) ? $departmentId : '',
-                        "status" =>  isset($status) ? $status : '',
-                        "branches" =>  isset($branches) ? $branches : [],
-                        "departments" =>  isset($departments) ? $departments : [],
-                        "teams" =>  isset($teams) ? $teams : [],
-                        "teamId" => isset($teamId) ? $teamId : '',
-                        "page" => 'grid'
-                    ]) ?>
+        <div class="col-lg-7 col-12 text-end pb-0 pl-10 pr-10">
+                    <div class="d-flex justify-content-end align-items-center gap-2">
+                        <!-- Search Bar -->
+                        <div class="employee-search-bar">
+                            <img src="<?= Yii::$app->homeUrl ?>image/search.svg" class="search-icon" style="width:16px;height:16px;">
+                            <input type="text" id="employeeSearch" class="employee-search-input" placeholder="<?= Yii::t('app', 'Search employees...') ?>" autocomplete="off">
+                        </div>
+                        <!-- Filter Button -->
+                        <span class="justify-content-center d-flex align-items-center employee-filter-btn" style="cursor: pointer;" onclick="toggleFilterDrawer()">
+                            <img src="<?= Yii::$app->homeUrl ?>images/icons/Dark/48px/FilterWhite.svg" class="pim-search-icons me-1">
+                            Filter
+                        </span>
+                        <!-- Grid/List Toggle -->
+                        <div class="btn-group" role="group">
+                            <a href="#" class="btn btn-primary font-size-12 pim-change-modes">
+                                <img src="<?= Yii::$app->homeUrl ?>images/icons/Dark/48px/gridwhite.svg" style="cursor: pointer; margin-top:2px;">
+                            </a>
+                            <a href="<?= Yii::$app->homeUrl ?>setting/employee/employee-list/<?= \common\models\ModelMaster::encodeParams(['companyId' => '']) ?>"
+                                class="btn btn-outline-primary font-size-12 pim-change-modes" style="border-color: #CBD5E1 !important;">
+                                <img src="<?= Yii::$app->homeUrl ?>images/icons/Dark/48px/listblack.svg" style="cursor: pointer; margin-top:2px;">
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row" style="--bs-gutter-x:0px;">
@@ -749,7 +756,120 @@ $showModal = $isFromImport; // หรือ 0
             max-width: 500px;
         }
     }
+
+    /* ========== Employee Search Bar ========== */
+    .employee-search-bar {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    .employee-search-bar .search-icon {
+        position: absolute;
+        left: 10px;
+        z-index: 2;
+        opacity: 0.5;
+    }
+    .employee-search-input {
+        width: 220px;
+        height: 30px;
+        padding: 4px 12px 4px 32px;
+        border: 1px solid #CBD5E1;
+        border-radius: 71px;
+        font-size: 13px;
+        font-weight: 400;
+        outline: none;
+        transition: border-color 0.2s ease, width 0.3s ease;
+        background: #F8F9FB;
+        color: #30313D;
+    }
+    .employee-search-input:focus {
+        border-color: #2580D3;
+        width: 280px;
+        background: #fff;
+    }
+    .employee-search-input::placeholder {
+        color: #8A8A8A;
+    }
+
+    /* ========== Filter Drawer Panel ========== */
+    .filter-drawer-overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.3);
+        z-index: 1050;
+        transition: opacity 0.3s ease;
+    }
+    .filter-drawer-overlay.active {
+        display: block;
+    }
+    .filter-drawer {
+        position: fixed;
+        top: 0;
+        right: -380px;
+        width: 360px;
+        height: 100vh;
+        background: #fff;
+        z-index: 1051;
+        box-shadow: -4px 0 20px rgba(0,0,0,0.12);
+        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        border-radius: 12px 0 0 12px;
+    }
+    .filter-drawer.active {
+        right: 0;
+    }
+    .filter-drawer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px 16px;
+        border-bottom: 1px solid #E8ECF0;
+    }
+    .filter-drawer-body {
+        padding: 20px 24px;
+        flex: 1;
+        overflow-y: auto;
+    }
+    .filter-drawer-body .d-flex {
+        flex-direction: column;
+        gap: 14px !important;
+    }
+    .filter-drawer-body .select-pim {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+    .filter-drawer-body .btn-group {
+        display: none !important;
+    }
 </style>
+
+<!-- Filter Drawer Panel -->
+<div class="filter-drawer-overlay" id="filterDrawerOverlay" onclick="toggleFilterDrawer()"></div>
+<div class="filter-drawer" id="filterDrawer">
+    <div class="filter-drawer-header">
+        <h5 style="margin:0;font-weight:600;font-size:18px;">Filters</h5>
+        <span onclick="toggleFilterDrawer()" style="cursor:pointer;font-size:22px;color:#666;">&times;</span>
+    </div>
+    <div class="filter-drawer-body">
+        <?= $this->render('filter', [
+            "companies" => $companies,
+            "statusTexArr" => $statusTexArr,
+            "companies" => isset($companies) ? $companies : [],
+            "companyId" =>  isset($companyId) ? $companyId : '',
+            "branchId" =>  isset($branchId) ? $branchId : '',
+            "teamId" =>  isset($teamId) ? $teamId : '',
+            "departmentId" =>  isset($departmentId) ? $departmentId : '',
+            "status" =>  isset($status) ? $status : '',
+            "branches" =>  isset($branches) ? $branches : [],
+            "departments" =>  isset($departments) ? $departments : [],
+            "teams" =>  isset($teams) ? $teams : [],
+            "teamId" => isset($teamId) ? $teamId : '',
+            "page" => 'grid'
+        ]) ?>
+    </div>
+</div>
 <script>
     function selectEmployee(employeeId) {
         if ($("#check-employee-" + employeeId).prop('checked') == true) {
@@ -812,6 +932,33 @@ $showModal = $isFromImport; // หรือ 0
         });
     }
     
+    // ========== Filter Drawer Toggle ==========
+    function toggleFilterDrawer() {
+        var drawer = document.getElementById('filterDrawer');
+        var overlay = document.getElementById('filterDrawerOverlay');
+        drawer.classList.toggle('active');
+        overlay.classList.toggle('active');
+    }
+
+    // ========== Employee Search ==========
+    document.addEventListener('DOMContentLoaded', function() {
+        var searchInput = document.getElementById('employeeSearch');
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                var query = this.value.toLowerCase().trim();
+                var cards = document.querySelectorAll('#main-body .col-lg-4');
+                cards.forEach(function(col) {
+                    var text = col.textContent.toLowerCase();
+                    if (query === '' || text.indexOf(query) !== -1) {
+                        col.style.display = '';
+                    } else {
+                        col.style.display = 'none';
+                    }
+                });
+            });
+        }
+    });
+
 </script>
 <?php
 $this->registerJs('

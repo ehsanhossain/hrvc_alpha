@@ -15,19 +15,20 @@ AppAsset::register($this);
 <head>
 	<meta charset="<?= Yii::$app->charset ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="shortcut icon" href="<?= Yii::$app->request->baseUrl; ?>/image/logo-hrvc.png?v=1" type="image/x-icon" />
+	<link rel="shortcut icon" href="<?= Yii::$app->request->baseUrl; ?>/image/hrvc-favicon.png?v=2" type="image/png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<?php $this->registerCsrfMetaTags() ?>
 	<title><?= Html::encode($this->title) ?></title>
 	<?php $this->head() ?>
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100" style="margin:0;padding:0;">
 	<?php $this->beginBody() ?>
 
-	<main role="main" class="flex-shrink-0">
-		<div class="pr-12">
-			<?= $content ?>
-		</div>
+	<main role="main" class="flex-shrink-0" style="flex:1;">
+		<?= $content ?>
 	</main>
 
 	<?php

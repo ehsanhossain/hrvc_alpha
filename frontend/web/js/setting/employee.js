@@ -55,7 +55,7 @@ function filterEmployee() {
           dataType: "json",
           url: url,
           data: { companyId: companyId, branchId: branchId, departmentId: departmentId, teamId: teamId, status: status, pageType: pageType, perPage: perPage },
-          success: function (data) {},
+          success: function (data) { },
      });
 }
 
@@ -92,16 +92,23 @@ function deleteEmployee() {
           data: { employeeId: employeeId },
           success: function (data) {
                if (data.status) {
-                    $("#employee-" + employeeId).hide();
+                    // Remove the card's parent column so the grid reflows
+                    var card = $("#employee-" + employeeId);
+                    var col = card.closest('.col-lg-4');
+                    if (col.length) {
+                         col.fadeOut(300, function () { $(this).remove(); });
+                    } else {
+                         card.fadeOut(300, function () { $(this).remove(); });
+                    }
                     var modalEl = document.getElementById("warning-delete-employee1");
                     var modal = bootstrap.Modal.getInstance(modalEl);
                     modal.hide();
                } else {
-                    alert("ไม่สามารถลบพนักงานได้");
+                    alert("Cannot delete employee");
                }
           },
           error: function () {
-               alert("เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์");
+               alert("Server connection error");
           },
      });
 }
