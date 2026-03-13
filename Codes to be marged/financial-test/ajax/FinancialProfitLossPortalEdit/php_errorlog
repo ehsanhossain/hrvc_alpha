@@ -1,0 +1,2 @@
+[13-Mar-2025 02:29:01 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialProfitLossPortalEdit/getBreakdown.php on line 6
+[14-Mar-2025 03:22:40 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialProfitLossPortalEdit/getBreakdown.php on line 6

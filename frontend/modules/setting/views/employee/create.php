@@ -438,6 +438,27 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
 
                         </div>
+
+                        <?php if ($statusfrom == 'Create'): ?>
+                        <div class="w-100" style="margin-top: 20px;">
+                            <div class="w-100">
+                                <text class="font-size-16 font-weight-500">
+                                    <?= Yii::t('app', 'Email Notification') ?>
+                                </text>
+                                <hr class="hr-group">
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sendWelcomeEmail" name="sendWelcomeEmail" value="1" checked>
+                                    <span class="checkbox-cycle"></span>
+                                    <label for="sendWelcomeEmail"><?= Yii::t('app', 'Send welcome email to new employee') ?></label>
+                                </div>
+                            </div>
+                            <p class="font-size-12 text-gray mt-5" style="margin-left: 28px;">
+                                <?= Yii::t('app', 'An email with login credentials will be sent to the employee\'s system login email address.') ?>
+                            </p>
+                        </div>
+                        <?php endif; ?>
                     </div>
 
                 </div>

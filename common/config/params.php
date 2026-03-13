@@ -1,9 +1,11 @@
 <?php
 return [
-    'adminEmail' => 'admin@example.com',
-    'supportEmail' => 'support@example.com',
-    'senderEmail' => 'noreply@example.com',
-    'senderName' => 'Example.com mailer',
-    'user.passwordResetTokenExpire' => 3600,
+    'adminEmail' => 'admin@tcghrvc.com',
+    'supportEmail' => 'support@tcghrvc.com',
+    'senderEmail' => 'noreply@tcghrvc.com',
+    'senderName' => 'HRVC',
+    'welcomeSenderEmail' => 'hello@tcghrvc.com',
+    'welcomeSenderName' => 'HRVC',
+    'user.passwordResetTokenExpire' => 86400, // 24 hours
     'user.passwordMinLength' => 8,
 ];

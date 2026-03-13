@@ -13,6 +13,7 @@ use yii\filters\AccessControl;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
+use frontend\models\ResetPasswordByCodeForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 
@@ -263,15 +264,17 @@ class SiteController extends Controller
      */
     public function actionRequestPasswordReset()
     {
+        $this->layout = 'blank';
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail()) {
-                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
-
-                return $this->goHome();
+            // Always show success message for security (don't reveal if email exists)
+            try {
+                $model->sendEmail();
+            } catch (\Exception $e) {
+                Yii::error('Password reset email failed: ' . $e->getMessage(), __METHOD__);
             }
-
-            Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for the provided email address.');
+            Yii::$app->session->setFlash('success', 'If that email exists in our system, we\'ve sent a verification code.');
+            return $this->redirect(['site/reset-password-by-code', 'email' => $model->email]);
         }
 
         return $this->render('requestPasswordResetToken', [
@@ -288,6 +291,7 @@ class SiteController extends Controller
      */
     public function actionResetPassword($token)
     {
+        $this->layout = 'blank';
         try {
             $model = new ResetPasswordForm($token);
         } catch (InvalidArgumentException $e) {
@@ -301,6 +305,31 @@ class SiteController extends Controller
         }
 
         return $this->render('resetPassword', [
+            'model' => $model,
+        ]);
+    }
+
+    /**
+     * Resets password using a 4-digit verification code.
+     *
+     * @return mixed
+     */
+    public function actionResetPasswordByCode()
+    {
+        $this->layout = 'blank';
+        $model = new ResetPasswordByCodeForm();
+
+        // Pre-fill email if passed from the request form
+        if (Yii::$app->request->get('email')) {
+            $model->email = Yii::$app->request->get('email');
+        }
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
+            Yii::$app->session->setFlash('success', 'Your password has been reset successfully. You can now log in.');
+            return $this->redirect(['site/login']);
+        }
+
+        return $this->render('resetPasswordByCode', [
             'model' => $model,
         ]);
     }

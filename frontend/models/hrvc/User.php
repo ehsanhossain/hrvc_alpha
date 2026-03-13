@@ -166,4 +166,27 @@ class User extends \frontend\models\hrvc\master\UserMaster
         }
         return $titleName;
     }
+
+    /**
+     * Get the company name for the currently logged-in user
+     */
+    public static function companyName()
+    {
+        if (Yii::$app->user->id) {
+            $user = User::find()->where(["userId" => Yii::$app->user->id])->asArray()->one();
+            if ($user) {
+                $employee = Employee::find()->where(["employeeId" => $user["employeeId"]])->asArray()->one();
+                if ($employee && !empty($employee["branchId"])) {
+                    $branch = Branch::find()->where(["branchId" => $employee["branchId"]])->asArray()->one();
+                    if ($branch && !empty($branch["companyId"])) {
+                        $company = Company::find()->where(["companyId" => $branch["companyId"]])->asArray()->one();
+                        if ($company) {
+                            return $company["companyName"] ?? 'Company';
+                        }
+                    }
+                }
+            }
+        }
+        return 'Select Company';
+    }
 }

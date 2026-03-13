@@ -76,8 +76,8 @@ JS;
         <div class="d-flex align-items-start justify-content-start">
             <div class="menu-left-side" id="sidebar">
                 <div class="sidebar-toggle-btn" id="sidebarToggle" onclick="toggleSidebar()" title="Collapse sidebar">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M15 4L9 10L15 16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" id="toggleChevron">
+                        <path d="M13 4L7 10L13 16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
                 <?= $this->render("@frontend/views/site/menu_left")
@@ -99,11 +99,18 @@ JS;
         document.body.classList.toggle('sidebar-collapsed');
         var collapsed = document.body.classList.contains('sidebar-collapsed');
         localStorage.setItem('hrvc_sidebar_collapsed', collapsed ? '1' : '0');
+        // Update tooltip
+        var toggleBtn = document.getElementById('sidebarToggle');
+        if (toggleBtn) {
+            toggleBtn.title = collapsed ? 'Expand sidebar' : 'Collapse sidebar';
+        }
     }
     // Restore sidebar state on load
     (function() {
         if (localStorage.getItem('hrvc_sidebar_collapsed') === '1') {
             document.body.classList.add('sidebar-collapsed');
+            var toggleBtn = document.getElementById('sidebarToggle');
+            if (toggleBtn) toggleBtn.title = 'Expand sidebar';
         }
     })();
     </script>

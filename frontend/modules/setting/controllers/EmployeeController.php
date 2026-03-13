@@ -417,6 +417,40 @@ class EmployeeController extends Controller
                         }
                     }
 
+                    // Send Welcome Email
+                    if (!empty($_POST['sendWelcomeEmail'])) {
+                        try {
+                            $companyName = '';
+                            if (!empty($employee->companyId)) {
+                                $company = \frontend\models\hrvc\Company::find()
+                                    ->where(['companyId' => $employee->companyId, 'status' => 1])
+                                    ->one();
+                                $companyName = $company ? $company->companyName : '';
+                            }
+
+                            $loginUrl = 'https://app.tcghrvc.com/site/login';
+
+                            Yii::$app->get('welcomeMailer')
+                                ->compose(
+                                    ['html' => 'welcomeEmployee-html', 'text' => 'welcomeEmployee-text'],
+                                    [
+                                        'employeeName' => $employee->employeeFirstname,
+                                        'companyName' => $companyName,
+                                        'loginEmail' => $user->username,
+                                        'tempPassword' => $_POST['password'],
+                                        'loginUrl' => $loginUrl,
+                                    ]
+                                )
+                                ->setFrom([Yii::$app->params['welcomeSenderEmail'] => Yii::$app->params['welcomeSenderName']])
+                                ->setTo($user->username)
+                                ->setSubject('Welcome to HRVC - Your Account Details')
+                                ->send();
+                        } catch (\Exception $e) {
+                            // Log email error but don't block employee creation
+                            Yii::error('Failed to send welcome email: ' . $e->getMessage(), __METHOD__);
+                        }
+                    }
+
                     // certificateData
                     $certificates = json_decode($_POST['certificateData'], true);
                     if ($certificates && is_array($certificates)) {

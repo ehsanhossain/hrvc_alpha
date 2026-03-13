@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# ถ้า URL ตรงกับ root (ไม่มีไฟล์ระบุ)
+DirectoryIndex index.php
+
+# ซ่อน .php สำหรับทุกไฟล์
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# ไม่ให้แสดง index ใน URL
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index(\.php)?\ HTTP/
+RewriteRule ^index(\.php)?$ / [R=301,L]

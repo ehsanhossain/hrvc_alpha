@@ -1,0 +1,1 @@
+[13-Mar-2025 08:09:37 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialHistory/getGroup.php on line 7

@@ -44,7 +44,12 @@ class User extends ActiveRecord implements IdentityInterface
     public function behaviors()
     {
         return [
-            TimestampBehavior::class,
+            [
+                'class' => TimestampBehavior::class,
+                'createdAtAttribute' => 'createDateTime',
+                'updatedAtAttribute' => 'updateDateTime',
+                'value' => date('Y-m-d H:i:s'),
+            ],
         ];
     }
 
@@ -98,10 +103,8 @@ class User extends ActiveRecord implements IdentityInterface
             return null;
         }
 
-        return static::findOne([
-            'password_reset_token' => $token,
-            'status' => self::STATUS_ACTIVE,
-        ]);
+        // password_reset_token column does not exist in DB — using code-based reset instead
+        return null;
     }
 
     /**
@@ -193,10 +196,12 @@ class User extends ActiveRecord implements IdentityInterface
 
     /**
      * Generates new password reset token
+     * NOTE: password_reset_token column does not exist — this is a no-op.
+     * Use generatePasswordResetCode() instead.
      */
     public function generatePasswordResetToken()
     {
-        $this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
+        // No-op: password_reset_token column does not exist in DB
     }
 
     /**
@@ -204,14 +209,70 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function generateEmailVerificationToken()
     {
-        $this->verification_token = Yii::$app->security->generateRandomString() . '_' . time();
+        // No-op: verification_token column does not exist in DB
     }
 
     /**
      * Removes password reset token
+     * NOTE: password_reset_token column does not exist — this is a no-op.
      */
     public function removePasswordResetToken()
     {
-        $this->password_reset_token = null;
+        // No-op: password_reset_token column does not exist in DB
+    }
+
+    /**
+     * Generates a 4-digit password reset verification code.
+     * Code expires in 24 hours.
+     */
+    public function generatePasswordResetCode()
+    {
+        $this->password_reset_code = str_pad(random_int(0, 9999), 4, '0', STR_PAD_LEFT);
+        $this->password_reset_code_expires = time() + 86400; // 24 hours
+    }
+
+    /**
+     * Finds user by email and valid password reset code.
+     *
+     * @param string $email
+     * @param string $code
+     * @return static|null
+     */
+    public static function findByPasswordResetCode($email, $code)
+    {
+        $user = static::findOne([
+            'username' => $email,
+            'password_reset_code' => $code,
+            'status' => self::STATUS_ACTIVE,
+        ]);
+
+        if (!$user || !static::isPasswordResetCodeValid($user->password_reset_code_expires)) {
+            return null;
+        }
+
+        return $user;
+    }
+
+    /**
+     * Checks if the password reset code has not expired.
+     *
+     * @param int $expires timestamp
+     * @return bool
+     */
+    public static function isPasswordResetCodeValid($expires)
+    {
+        if (empty($expires)) {
+            return false;
+        }
+        return (int)$expires >= time();
+    }
+
+    /**
+     * Removes password reset code after use.
+     */
+    public function removePasswordResetCode()
+    {
+        $this->password_reset_code = null;
+        $this->password_reset_code_expires = null;
     }
 }

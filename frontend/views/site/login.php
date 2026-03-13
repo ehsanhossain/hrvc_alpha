@@ -94,7 +94,7 @@ $this->title = 'HRVC Login';
                                 </div>
                             </div>
                         </div>
-                        <a class="login-forgot" href="javascript:void(0)" onclick="alert('Forgot password feature coming soon.')">Forgot password?</a>
+                        <a class="login-forgot" href="<?= Yii::$app->homeUrl ?>site/request-password-reset">Forgot password?</a>
                     </div>
 
                     <!-- Remember Me -->

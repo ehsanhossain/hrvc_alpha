@@ -1,0 +1,60 @@
+[04-Apr-2025 08:04:01 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 11
+[04-Apr-2025 08:04:01 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 12
+[04-Apr-2025 08:04:01 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 13
+[04-Apr-2025 08:04:05 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 11
+[04-Apr-2025 08:04:05 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 12
+[04-Apr-2025 08:04:05 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 13
+[04-Apr-2025 08:04:41 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 11
+[04-Apr-2025 08:04:41 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 12
+[04-Apr-2025 08:04:41 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 13
+[04-Apr-2025 08:04:46 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 11
+[04-Apr-2025 08:04:46 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 12
+[04-Apr-2025 08:04:46 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 13
+[04-Apr-2025 08:05:24 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 11
+[04-Apr-2025 08:05:24 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 12
+[04-Apr-2025 08:05:24 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 13
+[04-Apr-2025 08:06:38 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 11
+[04-Apr-2025 08:06:38 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 12
+[04-Apr-2025 08:06:38 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 13
+[11-Apr-2025 09:46:53 UTC] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 23
+[11-Apr-2025 09:48:19 UTC] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 23
+[11-Apr-2025 09:48:20 UTC] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 23
+[11-Apr-2025 09:48:23 UTC] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 23
+[11-Apr-2025 09:48:31 UTC] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 23
+[11-Apr-2025 09:49:26 UTC] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 23
+[11-Apr-2025 09:50:02 UTC] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 26
+[11-Apr-2025 09:53:09 UTC] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 26
+[15-Apr-2025 06:31:51 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'branchId = '63' ORDER BY a.acc_code ASC' at line 6 in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php:33
+Stack trace:
+#0 /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php(33): mysqli_query(Object(mysqli), 'SELECT a.*,b.me...')
+#1 {main}
+  thrown in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 33
+[15-Apr-2025 06:32:16 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'branchId = '63' ORDER BY a.acc_code ASC' at line 6 in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php:36
+Stack trace:
+#0 /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php(36): mysqli_query(Object(mysqli), 'SELECT a.*,b.me...')
+#1 {main}
+  thrown in /home/customer/www/fs.tcg-hrvc-system.com/public_html/financial/ajax/FinancialConfiguration/getData.php on line 36

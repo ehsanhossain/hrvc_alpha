@@ -8,6 +8,18 @@ use frontend\models\hrvc\User;
 ?>
 <div class="col-12">
     <div class="d-flex align-items-center justify-content-end pl-0 pr-0" style="gap: 8px; height: 55px;">
+        <!-- Company/Workspace Selector -->
+        <div class="company-selector" onclick="toggleCompanySelector()" style="margin-right: 0;">
+            <div class="company-dot"></div>
+            <div class="company-selector-info">
+                <span class="company-selector-name"><?= isset(Yii::$app->user->id) ? \frontend\models\hrvc\User::companyName() : 'Select Company' ?></span>
+                <span class="company-selector-label">COMPANY</span>
+            </div>
+            <div class="company-selector-chevron">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5L6 8L9 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+        </div>
+
         <!-- Global Search -->
         <div style="flex: 1; max-width: 280px; margin-right: auto; margin-left: 8px;">
             <div style="position: relative;">
@@ -172,6 +184,11 @@ use frontend\models\hrvc\User;
 </div>
 
 <script>
+function toggleCompanySelector() {
+    // TODO: Implement company selector dropdown with AJAX company list
+    console.log('Company selector clicked — dropdown coming soon');
+}
+
 function toggleProfileMenu() {
     var menu = document.getElementById('profileMenu');
     var countryMenu = document.getElementById('countryMenu');
