@@ -71,6 +71,42 @@ class AjaxController extends Controller
         // Change directory so relative includes work
         $originalDir = getcwd();
         chdir(dirname($filePath));
+
+        // Provide safe defaults for common $_POST parameters used by FS AJAX files.
+        // This prevents "Undefined array key" errors across all FS AJAX endpoints.
+        $postDefaults = [
+            'page' => '1',
+            'filter' => '',
+            'searchText' => '',
+            'companyId' => '',
+            'branchId' => '',
+            'year' => '',
+            'quarter' => '',
+            'rate' => '3',
+            'currencyId' => '',
+            'filterStatus' => '0',
+            'MajorId' => '',
+            'MediumId' => '',
+            'BreakdownId' => '',
+            'ly_done' => '',
+            'ly_progress' => '',
+            'ly_yet' => '',
+            'cp_done' => '',
+            'cp_progress' => '',
+            'cp_yet' => '',
+            'cpt_done' => '',
+            'cpt_progress' => '',
+            'cpt_yet' => '',
+            'nt_done' => '',
+            'nt_progress' => '',
+            'nt_yet' => '',
+            'startYear' => '',
+        ];
+        foreach ($postDefaults as $key => $default) {
+            if (!isset($_POST[$key])) {
+                $_POST[$key] = $default;
+            }
+        }
         
         try {
             include $filePath;

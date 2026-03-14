@@ -1,3 +1,7 @@
+<?php
+use common\helpers\CompanyContext;
+$contextCompanyId = CompanyContext::getCompanyId();
+?>
 <div style="display: flex; justify-content: flex-end; gap: 16px; align-items: center; width: 100%;">
 
     <select  id="countrySelect" class="font-size-12 select-pim" required>

@@ -5,9 +5,9 @@ $connection = connectDB($secure);
 
 $condition = "";
 
-$current_page = mysqli_real_escape_string($connection, $_POST['page']);
-$filter = mysqli_real_escape_string($connection, $_POST['filter']);
-$searchText = mysqli_real_escape_string($connection, $_POST['searchText']);
+$current_page = mysqli_real_escape_string($connection, $_POST['page'] ?? '1');
+$filter = mysqli_real_escape_string($connection, $_POST['filter'] ?? '1');
+$searchText = mysqli_real_escape_string($connection, $_POST['searchText'] ?? '');
 
 if ($searchText != '') {
     $condition = " AND a.currencyName LIKE '%$searchText%' ";

@@ -1,9 +1,16 @@
 <?php
 
+use common\helpers\CompanyContext;
 use common\models\ModelMaster;
 use frontend\models\hrvc\Branch;
 use frontend\models\hrvc\Company;
 use frontend\models\hrvc\Team;
+
+// If a company is selected in the header navbar, use it as the default filter
+$contextCompanyId = CompanyContext::getCompanyId();
+if (!empty($contextCompanyId) && empty($companyId)) {
+    $companyId = $contextCompanyId;
+}
 
 ?>
 

@@ -1,6 +1,7 @@
 <?php
 
 use common\helpers\Path;
+use common\helpers\CompanyContext;
 use common\models\ModelMaster;
 use frontend\models\hrvc\UserRole;
 
@@ -8,6 +9,10 @@ $session = Yii::$app->session;
 $role = UserRole::userRight();
 $isHr = UserRole::isHr();
 $homeUrl = Yii::$app->homeUrl;
+
+// Get the active company context for URL generation
+$activeCompanyId = CompanyContext::getCompanyId();
+$companyParam = $activeCompanyId ? $activeCompanyId : '';
 
 // ─── Module Definitions ──────────────────────────────────────────
 $modules = [
@@ -24,11 +29,11 @@ $modules = [
                 'items' => array_filter([
                     ($role >= 5) ? ['label' => Yii::t('app', 'Group Configuration'), 'icon' => $homeUrl . 'images/icons/white-icons/MasterSetting/group.svg', 'url' => $homeUrl . 'setting/group/display-group'] : null,
                     ($role >= 5) ? ['label' => Yii::t('app', 'Company Information'), 'icon' => $homeUrl . 'images/icons/white-icons/MasterSetting/company.svg', 'url' => $homeUrl . 'setting/company/display-company'] : null,
-                    ($role >= 5) ? ['label' => Yii::t('app', 'Branch'), 'icon' => $homeUrl . 'images/icons/white-icons/others/branch.svg', 'url' => $homeUrl . 'setting/branch/no-branch/' . ModelMaster::encodeParams(['companyId' => ''])] : null,
-                    ($role >= 5) ? ['label' => Yii::t('app', 'Department'), 'icon' => $homeUrl . 'images/icons/white-icons/MasterSetting/department.svg', 'url' => $homeUrl . 'setting/department/no-department/' . ModelMaster::encodeParams(['branchId' => ''])] : null,
-                    ($role >= 5) ? ['label' => Yii::t('app', 'Title'), 'icon' => $homeUrl . 'images/icons/white-icons/MasterSetting/title.svg', 'url' => $homeUrl . 'setting/title/no-title/' . ModelMaster::encodeParams(['departmentId' => ''])] : null,
-                    ($role >= 5) ? ['label' => Yii::t('app', 'Team'), 'icon' => $homeUrl . 'images/icons/white-icons/MasterSetting/team.svg', 'url' => $homeUrl . 'setting/team/no-team/' . ModelMaster::encodeParams(['departmentId' => ''])] : null,
-                    ($isHr == 1 || $role >= 5) ? ['label' => Yii::t('app', 'Employee'), 'icon' => $homeUrl . 'images/icons/white-icons/BehavioralEvaluation/my_portal.svg', 'url' => $homeUrl . 'setting/employee/no-employee/' . ModelMaster::encodeParams(['companyId' => ''])] : null,
+                    ($role >= 5) ? ['label' => Yii::t('app', 'Branch'), 'icon' => $homeUrl . 'images/icons/white-icons/others/branch.svg', 'url' => $homeUrl . 'setting/branch/no-branch/' . ModelMaster::encodeParams(['companyId' => $companyParam])] : null,
+                    ($role >= 5) ? ['label' => Yii::t('app', 'Department'), 'icon' => $homeUrl . 'images/icons/white-icons/MasterSetting/department.svg', 'url' => $homeUrl . 'setting/department/no-department/' . ModelMaster::encodeParams(['branchId' => '', 'companyId' => $companyParam])] : null,
+                    ($role >= 5) ? ['label' => Yii::t('app', 'Title'), 'icon' => $homeUrl . 'images/icons/white-icons/MasterSetting/title.svg', 'url' => $homeUrl . 'setting/title/no-title/' . ModelMaster::encodeParams(['departmentId' => '', 'companyId' => $companyParam])] : null,
+                    ($role >= 5) ? ['label' => Yii::t('app', 'Team'), 'icon' => $homeUrl . 'images/icons/white-icons/MasterSetting/team.svg', 'url' => $homeUrl . 'setting/team/no-team/' . ModelMaster::encodeParams(['departmentId' => '', 'companyId' => $companyParam])] : null,
+                    ($isHr == 1 || $role >= 5) ? ['label' => Yii::t('app', 'Employee'), 'icon' => $homeUrl . 'images/icons/white-icons/BehavioralEvaluation/my_portal.svg', 'url' => $homeUrl . 'setting/employee/no-employee/' . ModelMaster::encodeParams(['companyId' => $companyParam])] : null,
                 ]),
             ],
         ],
@@ -133,16 +138,16 @@ $modules = [
                 'label' => Yii::t('app', 'PLANNING'),
                 'items' => [
                     ['label' => Yii::t('app', 'Dashboard'), 'icon' => $homeUrl . 'images/icons/white-icons/FinancialSystem/dashboard.svg', 'url' => $homeUrl . 'fs/default/dashboard'],
-                    ['label' => Yii::t('app', 'PL Forecast'), 'icon' => $homeUrl . 'images/icons/white-icons/FinancialSystem/pl_forecase.svg', 'url' => $homeUrl . 'fs/planning/index'],
-                    ['label' => Yii::t('app', 'PL Configuration'), 'icon' => $homeUrl . 'images/icons/white-icons/FinancialSystem/pl_config.svg', 'url' => $homeUrl . 'fs/config/index'],
+                    ['label' => Yii::t('app', 'PL Forecast'), 'icon' => $homeUrl . 'images/icons/white-icons/FinancialSystem/pl_forecase.svg', 'url' => $homeUrl . 'fs/default/pl-portal'],
+                    ['label' => Yii::t('app', 'PL Configuration'), 'icon' => $homeUrl . 'images/icons/white-icons/FinancialSystem/pl_config.svg', 'url' => $homeUrl . 'fs/default/configuration'],
                 ],
             ],
             [
                 'label' => Yii::t('app', 'ANALYSIS'),
                 'items' => [
-                    ['label' => Yii::t('app', 'Golden Ratio'), 'icon' => $homeUrl . 'images/icons/white-icons/FinancialSystem/golden.svg', 'url' => $homeUrl . 'fs/planning/index'],
-                    ['label' => Yii::t('app', 'Forecast Account'), 'icon' => $homeUrl . 'images/icons/white-icons/FinancialSystem/forecast_account.svg', 'url' => $homeUrl . 'fs/config/pl-flow'],
-                    ['label' => Yii::t('app', 'Currency Management'), 'icon' => $homeUrl . 'images/icons/white-icons/FinancialSystem/currency.svg', 'url' => $homeUrl . 'fs/default/dashboard'],
+                    ['label' => Yii::t('app', 'Golden Ratio'), 'icon' => $homeUrl . 'images/icons/white-icons/FinancialSystem/golden.svg', 'url' => $homeUrl . 'fs/default/golden-ratio'],
+                    ['label' => Yii::t('app', 'Forecast Account'), 'icon' => $homeUrl . 'images/icons/white-icons/FinancialSystem/forecast_account.svg', 'url' => $homeUrl . 'fs/default/forecast-accounts'],
+                    ['label' => Yii::t('app', 'Currency Management'), 'icon' => $homeUrl . 'images/icons/white-icons/FinancialSystem/currency.svg', 'url' => $homeUrl . 'fs/default/currency-management'],
                 ],
             ],
         ],

@@ -1,3 +1,10 @@
+<?php
+use common\helpers\CompanyContext;
+$contextCompanyId = CompanyContext::getCompanyId();
+if (!empty($contextCompanyId) && empty($companyId)) {
+    $companyId = $contextCompanyId;
+}
+?>
 <div class="row">
     <div class="col-12 d-flex align-items-center gap-2 mb-2">
         <div class="pim-search-box d-flex align-items-center">

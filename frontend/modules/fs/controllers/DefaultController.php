@@ -49,8 +49,9 @@ class DefaultController extends Controller
         $this->view->registerJsFile($fsBase . 'plugins/dropzone/dropzone.js', ['depends' => [\yii\web\JqueryAsset::class]]);
         $this->view->registerJsFile($fsBase . 'js/custom.js', ['depends' => [\yii\web\JqueryAsset::class]]);
 
-        // CompanyId for JS
-        $companyId = $_SESSION['companyId'] ?? '';
+        // CompanyId for JS — prefer CompanyContext (header selector) over session employee company
+        $contextCompanyId = \common\helpers\CompanyContext::getCompanyId();
+        $companyId = !empty($contextCompanyId) ? $contextCompanyId : ($_SESSION['companyId'] ?? '');
         $this->view->registerJs("const companyId = '{$companyId}';", \yii\web\View::POS_HEAD);
 
         return $this->render($viewName, [

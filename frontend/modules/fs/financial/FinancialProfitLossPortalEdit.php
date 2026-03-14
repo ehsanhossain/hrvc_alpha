@@ -1,3 +1,10 @@
+<?php
+$_GET['id'] = $_GET['id'] ?? '';
+$_GET['quarter'] = $_GET['quarter'] ?? '';
+$_GET['rate'] = $_GET['rate'] ?? '3';
+$_GET['startYear'] = $_GET['startYear'] ?? '';
+$_GET['currencyId'] = $_GET['currencyId'] ?? '';
+?>
 <?php include __DIR__ . "/header.php"; ?>
 
 

@@ -1,7 +1,11 @@
 <?php
 
+use common\helpers\CompanyContext;
 use common\models\ModelMaster;
 use yii\bootstrap5\ActiveForm;
+
+// If a company is selected in the header navbar, use it as the default filter
+$contextCompanyId = CompanyContext::getCompanyId();
 
 $this->title = 'Evaluation';
 ?>

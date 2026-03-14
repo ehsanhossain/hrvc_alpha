@@ -393,4 +393,36 @@ class SiteController extends Controller
         $res["status"] = true;
         return json_encode($res);
     }
+
+    /**
+     * Switch the active company context via AJAX.
+     * POST: companyId (int or 0/null for "All Companies")
+     */
+    public function actionSwitchCompany()
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        if (!Yii::$app->request->isPost) {
+            return ['success' => false, 'message' => 'POST required'];
+        }
+
+        $companyId = Yii::$app->request->post('companyId');
+
+        // Validate: if companyId is set, ensure it belongs to user's group
+        if (!empty($companyId)) {
+            $companies = \common\helpers\CompanyContext::getUserCompanies();
+            $companyIds = array_column($companies, 'companyId');
+            if (!in_array((int)$companyId, array_map('intval', $companyIds))) {
+                return ['success' => false, 'message' => 'Company not in your group'];
+            }
+        }
+
+        \common\helpers\CompanyContext::setCompanyId($companyId);
+
+        return [
+            'success' => true,
+            'companyId' => \common\helpers\CompanyContext::getCompanyId(),
+            'companyName' => \common\helpers\CompanyContext::getCompanyName(),
+        ];
+    }
 }

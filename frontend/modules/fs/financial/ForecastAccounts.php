@@ -1,3 +1,8 @@
+<?php
+$_GET['id'] = $_GET['id'] ?? '';
+$_GET['quarter'] = $_GET['quarter'] ?? '';
+$_GET['rate'] = $_GET['rate'] ?? '3';
+?>
 <?php include __DIR__ . "/header.php"; ?>
 <div class="wrapper-content">
     <h1 class="page-title" style="cursor: pointer;" onclick="location.href = '/fs/default/dashboard'">

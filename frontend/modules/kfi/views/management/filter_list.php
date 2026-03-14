@@ -1,8 +1,15 @@
 <?php
 
+use common\helpers\CompanyContext;
 use common\models\ModelMaster;
 use frontend\models\hrvc\Branch;
 use frontend\models\hrvc\Company;
+
+// If a company is selected in the header navbar, use it as the default filter
+$contextCompanyId = CompanyContext::getCompanyId();
+if (!empty($contextCompanyId) && empty($companyId)) {
+    $companyId = $contextCompanyId;
+}
 ?>
 <div class="pim-search-box d-flex align-items-center">
     <img src="<?= Yii::$app->homeUrl ?>images/icons/Dark/48px/search.svg" class="pim-search-input-icon">

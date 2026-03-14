@@ -1,7 +1,14 @@
 <?php
+use common\helpers\CompanyContext;
 // ดึงเดือนและปีปัจจุบัน
 $currentMonth = Yii::t('app', date('F')); // แปลชื่อเดือน
 $currentYear = date('Y'); // ปี เช่น 2024
+
+// Override companyId with header company context if set
+$contextCompanyId = CompanyContext::getCompanyId();
+if (!empty($contextCompanyId)) {
+    $companyId = $contextCompanyId;
+}
 ?>
 <div class="nav nav-tabs d-flex justify-content-between align-items-center">
     <!-- ข้อความทางซ้าย -->

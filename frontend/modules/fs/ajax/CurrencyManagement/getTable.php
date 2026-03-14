@@ -3,11 +3,12 @@ include("../../../config/main_function.php");
 $secure = "-%ekla!(m09)%1A7";
 $connection = connectDB($secure);
 
-$page = mysqli_real_escape_string($connection, $_POST['page']);
+$page = mysqli_real_escape_string($connection, $_POST['page'] ?? '1');
 $limit = (intval($page) - 1) * 10;
-$filter = mysqli_real_escape_string($connection, $_POST['filter']);
-$searchText = mysqli_real_escape_string($connection, $_POST['searchText']);
+$filter = mysqli_real_escape_string($connection, $_POST['filter'] ?? '1');
+$searchText = mysqli_real_escape_string($connection, $_POST['searchText'] ?? '');
 
+$condition = "";
 
 if ($searchText != '') {
     $condition = " AND a.currencyName LIKE '%$searchText%' ";

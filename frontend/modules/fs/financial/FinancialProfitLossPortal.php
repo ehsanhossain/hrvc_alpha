@@ -1,3 +1,9 @@
+<?php
+// Safe defaults for GET params (page was designed for standalone URLs with ?id=X&quarter=Q&rate=R)
+$_GET['id'] = $_GET['id'] ?? '';
+$_GET['quarter'] = $_GET['quarter'] ?? '';
+$_GET['rate'] = $_GET['rate'] ?? '3';
+?>
 <?php include __DIR__ . "/header.php"; ?>
 
 

@@ -10,6 +10,7 @@ use Yii;
     * @property integer $departmentId
     * @property string $departmentName
     * @property integer $branchId
+    * @property integer $companyId
     * @property integer $status
     * @property string $createDateTime
     * @property string $updateDateTime
@@ -31,7 +32,7 @@ public function rules()
 {
 return [
             [['departmentName', 'branchId'], 'required'],
-            [['branchId'], 'integer'],
+            [['branchId', 'companyId'], 'integer'],
             [['createDateTime', 'updateDateTime'], 'safe'],
             [['departmentName'], 'string', 'max' => 255],
             [['status'], 'string', 'max' => 10],
@@ -47,6 +48,7 @@ return [
     'departmentId' => 'Department ID',
     'departmentName' => 'Department Name',
     'branchId' => 'Branch ID',
+    'companyId' => 'Company ID',
     'status' => 'Status',
     'createDateTime' => 'Create Date Time',
     'updateDateTime' => 'Update Date Time',
