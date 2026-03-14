@@ -42,3 +42,13 @@ phpunit.phar
 /backend/web/index-test.php
 /backend/web/robots.txt
 backend/modules/kfi/controllers/managementController.php
+
+# Local environment configs (contain DB/mail credentials - managed per-server)
+/common/config/main-local.php
+/common/config/params-local.php
+/frontend/config/main-local.php
+/frontend/config/params-local.php
+/backend/config/main-local.php
+/backend/config/params-local.php
+/console/config/main-local.php
+/console/config/params-local.php
