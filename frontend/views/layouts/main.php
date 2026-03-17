@@ -19,7 +19,8 @@ AppAsset::register($this);
 
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
-    <link rel="shortcut icon" href="<?= Yii::$app->request->baseUrl; ?>/image/hrvc-favicon.png?v=2" type="image/png" />
+    <link rel="icon" href="<?= Yii::$app->request->baseUrl; ?>/image/hrvc-favicon-512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="<?= Yii::$app->request->baseUrl; ?>/image/hrvc-favicon-512.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">

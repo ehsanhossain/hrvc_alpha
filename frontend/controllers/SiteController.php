@@ -425,4 +425,76 @@ class SiteController extends Controller
             'companyName' => \common\helpers\CompanyContext::getCompanyName(),
         ];
     }
+
+    /**
+     * Notifications page
+     */
+    public function actionNotifications()
+    {
+        if (!Yii::$app->user->id) {
+            return $this->redirect(Yii::$app->homeUrl . 'site/login');
+        }
+
+        $userId = Yii::$app->user->id;
+        $notifications = Yii::$app->db->createCommand(
+            'SELECT * FROM notification WHERE userId = :uid AND status = 1 ORDER BY create_datetime DESC LIMIT 100',
+            [':uid' => $userId]
+        )->queryAll();
+
+        return $this->render('notifications', [
+            'notifications' => $notifications,
+        ]);
+    }
+
+    /**
+     * AJAX: Get unread notification count
+     */
+    public function actionNotificationCount()
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        if (!Yii::$app->user->id) {
+            return ['count' => 0];
+        }
+
+        $count = Yii::$app->db->createCommand(
+            'SELECT COUNT(*) FROM notification WHERE userId = :uid AND is_read = 0 AND status = 1',
+            [':uid' => Yii::$app->user->id]
+        )->queryScalar();
+
+        return ['count' => (int)$count];
+    }
+
+    /**
+     * AJAX: Mark a notification as read
+     */
+    public function actionMarkNotificationRead()
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        $id = Yii::$app->request->post('notificationId');
+        if (!$id) return ['success' => false];
+
+        Yii::$app->db->createCommand()->update('notification', [
+            'is_read' => 1,
+            'update_datetime' => date('Y-m-d H:i:s'),
+        ], ['notificationId' => $id, 'userId' => Yii::$app->user->id])->execute();
+
+        return ['success' => true];
+    }
+
+    /**
+     * AJAX: Mark all notifications as read
+     */
+    public function actionMarkAllRead()
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        Yii::$app->db->createCommand()->update('notification', [
+            'is_read' => 1,
+            'update_datetime' => date('Y-m-d H:i:s'),
+        ], ['userId' => Yii::$app->user->id, 'is_read' => 0])->execute();
+
+        return ['success' => true];
+    }
 }

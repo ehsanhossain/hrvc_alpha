@@ -34,6 +34,34 @@ class DefaultController extends Controller
             "english" => $english == false ? '' : urldecode($english)
         ]);
     }
+
+    /**
+     * Grid-style translation view with all languages as columns
+     */
+    public function actionGrid()
+    {
+        $translations = Translator::find()->where(["status" => 1])->orderBy("english ASC")->asArray()->all();
+
+        // Calculate missing counts
+        $langs = ['japanese', 'thai', 'chinese', 'vietnam', 'spanish', 'indonesian'];
+        $missingCounts = [];
+        foreach ($langs as $l) {
+            $missingCounts[$l] = 0;
+        }
+        foreach ($translations as $t) {
+            foreach ($langs as $l) {
+                if (empty(trim($t[$l] ?? ''))) {
+                    $missingCounts[$l]++;
+                }
+            }
+        }
+
+        return $this->render('grid', [
+            'translations' => $translations,
+            'missingCounts' => $missingCounts,
+            'totalCount' => count($translations),
+        ]);
+    }
     public function actionCreate()
     {
         if (isset($_POST["english"])) {

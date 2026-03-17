@@ -26,11 +26,36 @@ class DefaultController extends Controller
     }
 
     /**
-     * P&L Forecast page - default action
+     * Default — redirects to P&L Portal
      */
     public function actionIndex()
     {
+        return $this->redirect(['pl-portal']);
+    }
+
+    /**
+     * P&L Forecast Portal — main page
+     * URL: /fs/default/pl-portal
+     */
+    public function actionPlPortal()
+    {
         return $this->render('pl-forecast');
+    }
+
+    /**
+     * Dashboard page
+     */
+    public function actionDashboard()
+    {
+        return $this->render('dashboard');
+    }
+
+    /**
+     * PL Configuration page
+     */
+    public function actionConfiguration()
+    {
+        return $this->render('configuration');
     }
 
     /**
@@ -47,5 +72,13 @@ class DefaultController extends Controller
     public function actionForecastAccounts()
     {
         return $this->render('forecast-accounts');
+    }
+
+    /**
+     * Currency Management page
+     */
+    public function actionCurrencyManagement()
+    {
+        return $this->render('currency-management');
     }
 }

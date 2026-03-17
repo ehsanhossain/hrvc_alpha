@@ -166,7 +166,7 @@ $currentUrl = Yii::$app->request->url;
     <div class="sidebar-logo-section">
         <a href="<?= $homeUrl ?>site/index">
             <div class="sidebar-logo-wrap">
-                <img src="<?= $homeUrl ?>image/hrvc-logo.svg" class="main-logo sidebar-logo-full" style="max-width:120px;">
+                <img src="<?= $homeUrl ?>image/hrvc-logo-light.svg" class="main-logo sidebar-logo-full" style="max-width:120px;">
                 <img src="<?= $homeUrl ?>image/hrvc-collapsed-logo.svg" class="main-logo sidebar-logo-collapsed" style="max-width:28px;display:none;">
             </div>
         </a>
@@ -263,7 +263,7 @@ $currentUrl = Yii::$app->request->url;
 
     <!-- ─── Bottom Settings ─── -->
     <div class="sidebar-bottom">
-        <a href="<?= $homeUrl ?>language/default/index" class="sidebar-home-btn">
+        <a href="<?= $homeUrl ?>setting/default/master-settings" class="sidebar-home-btn">
             <img src="<?= $homeUrl ?>images/icons/white-icons/others/8.svg" width="18" height="18">
             <span class="sidebar-text-hide"><?= Yii::t('app', 'Settings') ?></span>
         </a>
@@ -273,7 +273,28 @@ $currentUrl = Yii::$app->request->url;
 <script>
 // Module data
 var HRVC_MODULES = <?= $modulesJson ?>;
-var HRVC_CURRENT_MODULE = localStorage.getItem('hrvc_active_module') || 'pim';
+
+// Auto-detect module from current URL path
+var HRVC_CURRENT_MODULE = (function() {
+    var path = window.location.pathname;
+    // Map URL prefixes to module IDs
+    var urlModuleMap = {
+        '/fs/': 'finance',
+        '/kfi/': 'pim',
+        '/kgi/': 'pim',
+        '/kpi/': 'pim',
+        '/evaluation/': 'evaluation',
+        '/setting/': 'organization',
+        '/home/': 'pim'
+    };
+    for (var prefix in urlModuleMap) {
+        if (path.indexOf(prefix) !== -1) {
+            return urlModuleMap[prefix];
+        }
+    }
+    // Fallback to saved preference or default
+    return localStorage.getItem('hrvc_active_module') || 'pim';
+})();
 
 // Initialize sidebar on load
 document.addEventListener('DOMContentLoaded', function() {

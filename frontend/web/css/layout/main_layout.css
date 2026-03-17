@@ -106,7 +106,7 @@
     align-items: center;
     gap: 10px;
     padding: 10px 10px;
-    border-radius: 10px;
+    border-radius: 6px;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.2s ease;
@@ -121,7 +121,7 @@
     width: 34px;
     height: 34px;
     min-width: 34px;
-    border-radius: 8px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,7 +168,7 @@
     right: 0;
     background: #0D2E45;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    border-radius: 6px;
     padding: 6px;
     z-index: 200;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
@@ -189,7 +189,7 @@
     align-items: center;
     gap: 10px;
     padding: 8px 10px;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     transition: background 0.15s ease;
 }
@@ -206,7 +206,7 @@
     width: 32px;
     height: 32px;
     min-width: 32px;
-    border-radius: 7px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -236,7 +236,7 @@
     align-items: center;
     gap: 10px;
     padding: 9px 12px;
-    border-radius: 8px;
+    border-radius: 6px;
     color: rgba(255, 255, 255, 0.8);
     font-size: 13px;
     font-weight: 500;
@@ -299,7 +299,7 @@
     align-items: center;
     gap: 10px;
     padding: 8px 12px;
-    border-radius: 8px;
+    border-radius: 6px;
     color: rgba(255, 255, 255, 0.7);
     font-size: 13px;
     font-weight: 400;
@@ -388,68 +388,477 @@
     border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* ========== Company Selector (Header) ========== */
-.company-selector {
+/* ========== NEW HEADER BAR (Figma 2026) ========== */
+.hdr-bar {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    background: #F8F9FA;
-    border: 1px solid #E8E8E8;
-    cursor: pointer;
-    transition: all 0.15s ease;
-    position: relative;
-    margin-right: 12px;
-    min-width: 180px;
-    max-width: 260px;
+    justify-content: space-between;
+    height: 55px;
+    gap: 16px;
+    width: 100%;
 }
 
-.company-selector:hover {
-    border-color: #D0D0D0;
-    background: #F0F2F4;
-}
-
-.company-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #E53E3E;
-    flex-shrink: 0;
-}
-
-.company-selector-info {
+.hdr-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     flex: 1;
     min-width: 0;
 }
 
-.company-selector-name {
-    font-size: 12px;
-    font-weight: 600;
-    color: #1A1A1A;
+.hdr-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* ─── Company Chip ─── */
+.hdr-company {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px 5px 6px;
+    border-radius: 4px;
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    position: relative;
+    min-width: 200px;
+    max-width: 280px;
+    flex-shrink: 0;
+}
+
+.hdr-company:hover {
+    border-color: #CBD5E1;
+    background: #EDF2F7;
+}
+
+.hdr-company-logo {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 14px;
+    background: linear-gradient(218deg, #F9F9F9 14.9%, #F1F1F1 84.4%);
+    border: 0.24px solid #CBD5E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.hdr-company-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.hdr-company-initials {
+    font-size: 13px;
+    font-weight: 700;
+    color: #64748B;
+    line-height: 1;
+}
+
+.hdr-company-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    width: 152px;
+}
+
+.hdr-company-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #262626;
+    line-height: 20px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
-    line-height: 1.2;
 }
 
-.company-selector-label {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.6px;
-    color: #888;
-    text-transform: uppercase;
+.hdr-company-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: #A3A3A3;
     display: block;
-    line-height: 1.3;
+    line-height: 1;
 }
 
-.company-selector-chevron {
+.hdr-company-caret {
     flex-shrink: 0;
-    opacity: 0.4;
+    transition: transform 0.2s ease;
 }
 
-/* ========== Collapsed State ========== */
+/* ─── Company Dropdown ─── */
+.hdr-dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 260px;
+    background: #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #E8E8E8;
+    z-index: 9999;
+    padding: 6px 0;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+}
+
+.hdr-dropdown.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.hdr-dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 9px 16px;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.hdr-dropdown-item:hover {
+    background: #F8F8F8;
+}
+
+.hdr-dropdown-item.active {
+    background: #F0F7FF;
+}
+
+.hdr-dropdown-icon {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hdr-dropdown-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.hdr-dropdown-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1A1A1A;
+    display: block;
+}
+
+.hdr-dropdown-sub {
+    font-size: 10px;
+    color: #888;
+    display: block;
+    margin-top: 1px;
+}
+
+.hdr-dropdown-divider {
+    height: 1px;
+    background: #F0F0F0;
+    margin: 4px 12px;
+}
+
+.hdr-dropdown-section-label {
+    padding: 4px 16px 2px;
+    font-size: 9px;
+    font-weight: 700;
+    color: #999;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+/* ─── Search Pill ─── */
+.hdr-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #F1F5F9;
+    border-radius: 20px;
+    padding: 4px 12px 4px 6px;
+    height: 40px;
+    cursor: text;
+    flex-shrink: 0;
+}
+
+.hdr-search-icon {
+    flex-shrink: 0;
+    opacity: 0.6;
+    width: 25px;
+    height: 25px;
+}
+
+.hdr-search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    width: 60px;
+    min-width: 40px;
+}
+
+.hdr-search-input::placeholder {
+    color: #A3A3A3;
+}
+
+.hdr-search-input:focus {
+    width: 140px;
+}
+
+.hdr-search-shortcut {
+    display: flex;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.hdr-search-key {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #A3A3A3;
+    padding: 0 3px;
+}
+
+/* ─── User Info ─── */
+.hdr-user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    max-width: 180px;
+    text-align: right;
+    letter-spacing: -0.3px;
+}
+
+.hdr-user-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #212529;
+    line-height: 16.8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.hdr-user-title {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: #888;
+    line-height: 13.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* ─── Profile Pill ─── */
+.hdr-profile-pill {
+    width: 50px;
+    height: 40px;
+    border-radius: 20px;
+    background: #F0F2F4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.hdr-profile-pill:hover {
+    background: #E8EAED;
+}
+
+.hdr-profile-img {
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+.hdr-profile-caret {
+    flex-shrink: 0;
+    opacity: 0.6;
+}
+
+/* ─── Profile Dropdown ─── */
+.hdr-profile-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 200px;
+    background: #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #E8E8E8;
+    padding: 8px 0;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+}
+
+.hdr-profile-menu.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.hdr-profile-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #30313D;
+    text-decoration: none;
+    transition: background 0.12s ease;
+}
+
+.hdr-profile-link:hover {
+    background: #F5F5F5;
+    color: #30313D;
+}
+
+.hdr-profile-divider {
+    height: 1px;
+    background: #F0F0F0;
+    margin: 4px 12px;
+}
+
+.hdr-profile-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 4px 12px 2px;
+    padding: 9px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-decoration: none;
+    background: linear-gradient(135deg, #E53E3E, #C53030);
+    border-radius: 6px;
+    transition: all 0.15s ease;
+}
+
+.hdr-profile-logout:hover {
+    background: linear-gradient(135deg, #C53030, #9B2C2C);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+}
+
+/* ─── Notification Pill ─── */
+.hdr-noti-pill {
+    height: 40px;
+    border-radius: 20px;
+    background: #EAF5FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    flex-shrink: 0;
+}
+
+.hdr-noti-pill:hover {
+    background: #D5EBFF;
+}
+
+.hdr-noti-bell {
+    flex-shrink: 0;
+}
+
+.hdr-noti-count {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1A5A94;
+    line-height: 28px;
+    min-width: 20px;
+    text-align: right;
+}
+
+/* ─── Legacy compat (keep old classnames for rest of app) ─── */
+.header-name {
+    text-align: right !important;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+    max-width: 260px;
+    padding-right: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-dropdown {
+    background-color: #F0F2F4;
+    border-radius: 20px;
+    height: 34px;
+    width: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-dropdown {
+    background-color: #F0F2F4;
+    border-radius: 20px;
+    height: 34px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-pill {
+    background-color: #F0F2F4;
+    border-radius: 20px;
+    height: 34px;
+    width: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.notification-pill.has-notifications {
+    background-color: #DEE9F4;
+}
 .sidebar-collapsed .menu-left-side {
     width: 65px;
     padding: 12px 6px 10px 6px;
@@ -532,7 +941,7 @@ body {
     padding: 30px;
     gap: 7.721px;
     flex-shrink: 0;
-    border-radius: 7.721px;
+    border-radius: 6px;
     border: 1.544px dashed var(--Stroke-Bluish-Gray, #BBCDDE);
     background: #F9F9F9;
     min-height: calc(100vh - 80px);
