@@ -38,7 +38,9 @@ return [
         'evaluation' => [
             'class' => 'frontend\modules\evaluation\evaluation',
         ],
-
+        'fs' => [
+            'class' => 'frontend\modules\fs\fs',
+        ],
         'home' => [
             'class' => 'frontend\modules\home\home',
         ],
@@ -81,6 +83,8 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'fs/default/index' => 'fs/default/index',
+                'fs/default/<action>' => 'fs/default/<action>',
 
                 'setting/group/display-group/<hash>' => 'setting/group/display-group',
                 'setting/group/group-view/<hash>' => 'setting/group/group-view',
