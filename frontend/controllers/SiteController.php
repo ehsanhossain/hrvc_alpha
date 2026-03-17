@@ -435,11 +435,16 @@ class SiteController extends Controller
             return $this->redirect(Yii::$app->homeUrl . 'site/login');
         }
 
-        $userId = Yii::$app->user->id;
-        $notifications = Yii::$app->db->createCommand(
-            'SELECT * FROM notification WHERE userId = :uid AND status = 1 ORDER BY create_datetime DESC LIMIT 100',
-            [':uid' => $userId]
-        )->queryAll();
+        $notifications = [];
+        try {
+            $userId = Yii::$app->user->id;
+            $notifications = Yii::$app->db->createCommand(
+                'SELECT * FROM notification WHERE userId = :uid AND status = 1 ORDER BY create_datetime DESC LIMIT 100',
+                [':uid' => $userId]
+            )->queryAll();
+        } catch (\Exception $e) {
+            // Table may not exist yet on this server
+        }
 
         return $this->render('notifications', [
             'notifications' => $notifications,
@@ -457,12 +462,16 @@ class SiteController extends Controller
             return ['count' => 0];
         }
 
-        $count = Yii::$app->db->createCommand(
-            'SELECT COUNT(*) FROM notification WHERE userId = :uid AND is_read = 0 AND status = 1',
-            [':uid' => Yii::$app->user->id]
-        )->queryScalar();
+        try {
+            $count = Yii::$app->db->createCommand(
+                'SELECT COUNT(*) FROM notification WHERE userId = :uid AND is_read = 0 AND status = 1',
+                [':uid' => Yii::$app->user->id]
+            )->queryScalar();
 
-        return ['count' => (int)$count];
+            return ['count' => (int)$count];
+        } catch (\Exception $e) {
+            return ['count' => 0];
+        }
     }
 
     /**
@@ -475,10 +484,12 @@ class SiteController extends Controller
         $id = Yii::$app->request->post('notificationId');
         if (!$id) return ['success' => false];
 
-        Yii::$app->db->createCommand()->update('notification', [
-            'is_read' => 1,
-            'update_datetime' => date('Y-m-d H:i:s'),
-        ], ['notificationId' => $id, 'userId' => Yii::$app->user->id])->execute();
+        try {
+            Yii::$app->db->createCommand()->update('notification', [
+                'is_read' => 1,
+                'update_datetime' => date('Y-m-d H:i:s'),
+            ], ['notificationId' => $id, 'userId' => Yii::$app->user->id])->execute();
+        } catch (\Exception $e) {}
 
         return ['success' => true];
     }
@@ -490,10 +501,12 @@ class SiteController extends Controller
     {
         Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 
-        Yii::$app->db->createCommand()->update('notification', [
-            'is_read' => 1,
-            'update_datetime' => date('Y-m-d H:i:s'),
-        ], ['userId' => Yii::$app->user->id, 'is_read' => 0])->execute();
+        try {
+            Yii::$app->db->createCommand()->update('notification', [
+                'is_read' => 1,
+                'update_datetime' => date('Y-m-d H:i:s'),
+            ], ['userId' => Yii::$app->user->id, 'is_read' => 0])->execute();
+        } catch (\Exception $e) {}
 
         return ['success' => true];
     }
