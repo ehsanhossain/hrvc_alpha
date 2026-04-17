@@ -120,7 +120,7 @@ $companyLabel = $selectedCompanyId ? 'Company' : 'ALL COMPANIES';
             </div>
 
             <!-- Profile Pill -->
-            <div class="hdr-profile-pill" onclick="toggleProfileMenu()">
+            <div class="hdr-profile-pill" id="profilePill" onclick="toggleProfileMenu(event)">
                 <img src="<?= $homeUrl ?><?= isset(Yii::$app->user->id) ? User::userHeaderImage() : 'image/user.png' ?>" class="hdr-profile-img" alt="Profile">
                 <svg class="hdr-profile-caret" width="10" height="7" viewBox="0 0 10 7" fill="none">
                     <path d="M1 1L5 5L9 1" stroke="#2580D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -211,12 +211,39 @@ function switchCompany(companyId, e) {
     xhr.send(csrfParam + '=' + encodeURIComponent(csrfToken) + '&companyId=' + companyId);
 }
 
-function toggleProfileMenu() {
+function toggleProfileMenu(e) {
+    if (e) { e.preventDefault(); e.stopPropagation(); }
     var menu = document.getElementById('profileMenu');
     var companyMenu = document.getElementById('companyDropdownMenu');
     if (companyMenu) companyMenu.classList.remove('open');
-    menu.classList.toggle('open');
+    if (menu) menu.classList.toggle('open');
 }
+
+// Wait for DOM to be ready before binding events
+document.addEventListener('DOMContentLoaded', function() {
+    // Profile pill click
+    var pill = document.getElementById('profilePill');
+    if (pill) {
+        pill.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleProfileMenu(e);
+        });
+    }
+    // Prevent clicks inside the profile menu from closing it
+    var profileMenu = document.getElementById('profileMenu');
+    if (profileMenu) {
+        profileMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+    // Prevent clicks inside the company dropdown from closing it (except item clicks)
+    var companyDropdown = document.getElementById('companyDropdownMenu');
+    if (companyDropdown) {
+        companyDropdown.addEventListener('click', function(e) {
+            // Don't stop propagation for dropdown items (they need the switchCompany call)
+        });
+    }
+});
 
 // Close all menus when clicking outside
 document.addEventListener('click', function(e) {
@@ -224,7 +251,7 @@ document.addEventListener('click', function(e) {
         var cm = document.getElementById('companyDropdownMenu');
         if (cm) cm.classList.remove('open');
     }
-    if (!e.target.closest('.hdr-profile-pill')) {
+    if (!e.target.closest('#profilePill')) {
         var pm = document.getElementById('profileMenu');
         if (pm) pm.classList.remove('open');
     }
